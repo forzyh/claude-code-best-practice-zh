@@ -1,26 +1,26 @@
-# Head of Claude Code: What Happens After Coding Is Solved — Lenny's Podcast
+# Claude Code主管: 编码被破解后会发生什么 — Lenny播客
 
-Transcript of the interview with Boris Cherny ([@bcherny](https://x.com/bcherny)), creator of Claude Code, on Lenny's Podcast, published February 19, 2026.
+与Claude Code创建者Boris Cherny的采访记录 ([@bcherny](https://x.com/bcherny)), creator of Claude Code, on Lenny's Podcast, published February 19, 2026.
 
 <table width="100%">
 <tr>
-<td><a href="../">← Back to Claude Code Best Practice</a></td>
+<td><a href="../">← 返回Claude Code最佳实践</a></td>
 <td align="right"><img src="../!/claude-jumping.svg" alt="Claude" width="60" /></td>
 </tr>
 </table>
 
 ---
 
-## Video Details
+## 视频详情
 
-- **Guest:** Boris Cherny (Creator of Claude Code)
-- **Host:** Lenny Rachitsky (Lenny's Podcast)
-- **Published:** February 19, 2026
-- **YouTube:** [Watch on YouTube](https://youtu.be/We7BZVKbCVw)
+- **嘉宾:** Boris Cherny (Claude Code创建者)
+- **主持人:** Lenny Rachitsky (Lenny播客)
+- **发布时间:** 2026年2月19日
+- **YouTube:** [在YouTube上观看](https://youtu.be/We7BZVKbCVw)
 
 ---
 
-## Transcript
+## 转录
 
 [`0:02`](https://youtu.be/We7BZVKbCVw?t=2) 100% of my code is written by quad code. I have not edited a single line by hand since November. Every day I ship 10, 20, 30 p requests. So at the moment I have like five [music] agents running while we're recording this.
 

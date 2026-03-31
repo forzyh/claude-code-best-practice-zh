@@ -1,55 +1,55 @@
-# Skills Best Practice
+# 技能最佳实践
 
 ![Last Updated](https://img.shields.io/badge/Last_Updated-Mar%2028%2C%202026%205%3A59%20PM%20PKT-white?style=flat&labelColor=555)<br>
 [![Implemented](https://img.shields.io/badge/Implemented-2ea44f?style=flat)](../implementation/claude-skills-implementation.md)
 
-Claude Code skills — frontmatter fields and official bundled skills.
+Claude Code 技能 — 前言字段和官方打包技能。
 
 <table width="100%">
 <tr>
-<td><a href="../">← Back to Claude Code Best Practice</a></td>
+<td><a href="../">← 返回 Claude Code 最佳实践</a></td>
 <td align="right"><img src="../!/claude-jumping.svg" alt="Claude" width="60" /></td>
 </tr>
 </table>
 
 ---
 
-## Frontmatter Fields (13)
+## 前言字段（13个）
 
-| Field | Type | Required | Description |
+| 字段 | 类型 | 必需 | 说明 |
 |-------|------|----------|-------------|
-| `name` | string | No | Display name and `/slash-command` identifier. Defaults to the directory name if omitted |
-| `description` | string | Recommended | What the skill does. Shown in autocomplete and used by Claude for auto-discovery |
-| `argument-hint` | string | No | Hint shown during autocomplete (e.g., `[issue-number]`, `[filename]`) |
-| `disable-model-invocation` | boolean | No | Set `true` to prevent Claude from automatically invoking this skill |
-| `user-invocable` | boolean | No | Set `false` to hide from the `/` menu — skill becomes background knowledge only, intended for agent preloading |
-| `allowed-tools` | string | No | Tools allowed without permission prompts when this skill is active |
-| `model` | string | No | Model to use when this skill runs (e.g., `haiku`, `sonnet`, `opus`) |
-| `effort` | string | No | Override the model effort level when invoked (`low`, `medium`, `high`, `max`) |
-| `context` | string | No | Set to `fork` to run the skill in an isolated subagent context |
-| `agent` | string | No | Subagent type when `context: fork` is set (default: `general-purpose`) |
-| `hooks` | object | No | Lifecycle hooks scoped to this skill |
-| `paths` | string/list | No | Glob patterns that limit when the skill auto-activates. Accepts a comma-separated string or YAML list — Claude loads the skill only when working with matching files |
-| `shell` | string | No | Shell for `` !`command` `` blocks — `bash` (default) or `powershell`. Requires `CLAUDE_CODE_USE_POWERSHELL_TOOL=1` |
+| `name` | string | 否 | 显示名称和 `/斜杠命令` 标识符。如果省略，默认为目录名 |
+| `description` | string | 推荐 | 技能的功能。显示在自动完成中，由 Claude 用于自动发现 |
+| `argument-hint` | string | 否 | 自动完成时显示的提示（例如 `[issue-number]`、`[filename]`） |
+| `disable-model-invocation` | boolean | 否 | 设置 `true` 以防止 Claude 自动调用此技能 |
+| `user-invocable` | boolean | 否 | 设置 `false` 以从 `/` 菜单中隐藏 — 技能仅成为背景知识，用于代理预加载 |
+| `allowed-tools` | string | 否 | 此技能活跃时无需权限提示即可使用的工具 |
+| `model` | string | 否 | 此技能运行时使用的模型（例如 `haiku`、`sonnet`、`opus`） |
+| `effort` | string | 否 | 调用时覆盖模型效能级别（`low`、`medium`、`high`、`max`） |
+| `context` | string | 否 | 设置为 `fork` 以在隔离的子代理上下文中运行技能 |
+| `agent` | string | 否 | 设置 `context: fork` 时的子代理类型（默认：`general-purpose`） |
+| `hooks` | object | 否 | 此技能范围内的生命周期钩子 |
+| `paths` | string/list | 否 | Glob 模式，限制何时技能自动激活。接受逗号分隔的字符串或 YAML 列表 — Claude 仅在处理匹配模式的文件时加载技能 |
+| `shell` | string | 否 | `` !`command` `` 块的 Shell — `bash`（默认）或 `powershell`。需要 `CLAUDE_CODE_USE_POWERSHELL_TOOL=1` |
 
 ---
 
 ## ![Official](../!/tags/official.svg) **(5)**
 
-| # | Skill | Description |
+| # | 技能 | 说明 |
 |---|-------|-------------|
-| 1 | `simplify` | Review changed code for reuse, quality, and efficiency — refactors to eliminate duplication |
-| 2 | `batch` | Run commands across multiple files in bulk |
-| 3 | `debug` | Debug failing commands or code issues |
-| 4 | `loop` | Run a prompt or slash command on a recurring interval (up to 3 days) |
-| 5 | `claude-api` | Build apps with the Claude API or Anthropic SDK — triggers on `anthropic` / `@anthropic-ai/sdk` imports |
+| 1 | `simplify` | 审查变更代码以查找重用、质量和效率 — 重构以消除重复 |
+| 2 | `batch` | 跨多个文件批量运行命令 |
+| 3 | `debug` | 调试失败命令或代码问题 |
+| 4 | `loop` | 在循环间隔（最多 3 天）上运行提示或斜杠命令 |
+| 5 | `claude-api` | 使用 Claude API 或 Anthropic SDK 构建应用 — 触发 `anthropic` / `@anthropic-ai/sdk` 导入 |
 
-See also: [Official Skills Repository](https://github.com/anthropics/skills/tree/main/skills) for community-maintained installable skills.
+另见：[官方技能仓库](https://github.com/anthropics/skills/tree/main/skills)用于社区维护的可安装技能。
 
 ---
 
-## Sources
+## 来源
 
-- [Claude Code Skills — Docs](https://code.claude.com/docs/en/skills)
-- [Skills Discovery in Monorepos](../reports/claude-skills-for-larger-mono-repos.md)
-- [Claude Code CHANGELOG](https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md)
+- [Claude Code 技能 — 文档](https://code.claude.com/docs/en/skills)
+- [Monorepo 中的技能发现](../reports/claude-skills-for-larger-mono-repos.md)
+- [Claude Code 更新日志](https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md)

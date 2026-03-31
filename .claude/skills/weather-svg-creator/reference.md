@@ -1,62 +1,62 @@
-# Weather SVG Creator — Reference
+# 天气SVG创建器 — 参考
 
-## SVG Template
+## SVG模板
 
 ```svg
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 160" width="300" height="160">
   <rect width="300" height="160" rx="12" fill="#1a1a2e"/>
-  <text x="150" y="45" text-anchor="middle" fill="#8892b0" font-family="system-ui" font-size="14">Unit: [Celsius/Fahrenheit]</text>
+  <text x="150" y="45" text-anchor="middle" fill="#8892b0" font-family="system-ui" font-size="14">单位: [摄氏度/华氏度]</text>
   <text x="150" y="100" text-anchor="middle" fill="#ccd6f6" font-family="system-ui" font-size="42" font-weight="bold">[value]°[C/F]</text>
-  <text x="150" y="140" text-anchor="middle" fill="#64ffda" font-family="system-ui" font-size="16">Dubai, UAE</text>
+  <text x="150" y="140" text-anchor="middle" fill="#64ffda" font-family="system-ui" font-size="16">迪拜，阿联酋</text>
 </svg>
 ```
 
-### Placeholders
+### 占位符
 
-| Placeholder | Replace with | Example |
+| 占位符 | 替换为 | 示例 |
 |-------------|-------------|---------|
-| `[Celsius/Fahrenheit]` | Full unit name from input | `Celsius` |
-| `[value]` | Numeric temperature from input | `26.2` |
-| `[C/F]` | Unit abbreviation | `C` or `F` |
+| `[摄氏度/华氏度]` | 输入中的完整单位名称 | `摄氏度` |
+| `[value]` | 输入中的数值温度 | `26.2` |
+| `[C/F]` | 单位缩写 | `C` 或 `F` |
 
-### Design Specs
+### 设计规格
 
-| Property | Value |
+| 属性 | 值 |
 |----------|-------|
-| Dimensions | 300 x 160 px |
-| Corner radius | 12 px |
-| Background | `#1a1a2e` (dark navy) |
-| Unit label | `#8892b0` (muted blue), 14px |
-| Temperature | `#ccd6f6` (light blue), 42px bold |
-| Location | `#64ffda` (teal accent), 16px |
-| Font | `system-ui` |
-| All text | Centered (`text-anchor="middle"` at x=150) |
+| 尺寸 | 300 x 160 px |
+| 圆角半径 | 12 px |
+| 背景 | `#1a1a2e` (深海军蓝) |
+| 单位标签 | `#8892b0` (柔和蓝), 14px |
+| 温度 | `#ccd6f6` (浅蓝), 42px 加粗 |
+| 位置 | `#64ffda` (青色重点), 16px |
+| 字体 | `system-ui` |
+| 所有文本 | 居中 (`text-anchor="middle"` 在 x=150) |
 
 ---
 
-## Output Markdown Template
+## 输出Markdown模板
 
 ```markdown
-# Weather Result
+# 天气结果
 
-## Temperature
+## 温度
 [value]°[C/F]
 
-## Location
-Dubai, UAE
+## 位置
+迪拜，阿联酋
 
-## Unit
-[Celsius/Fahrenheit]
+## 单位
+[摄氏度/华氏度]
 
-## SVG Card
-![Weather Card](weather.svg)
+## SVG卡
+![天气卡](weather.svg)
 ```
 
 ---
 
-## Output Paths
+## 输出路径
 
-| File | Path |
+| 文件 | 路径 |
 |------|------|
-| SVG card | `orchestration-workflow/weather.svg` |
-| Markdown summary | `orchestration-workflow/output.md` |
+| SVG卡 | `orchestration-workflow/weather.svg` |
+| Markdown摘要 | `orchestration-workflow/output.md` |

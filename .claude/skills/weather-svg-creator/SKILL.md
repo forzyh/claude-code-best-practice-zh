@@ -1,29 +1,29 @@
 ---
 name: weather-svg-creator
-description: Creates an SVG weather card showing the current temperature for Dubai. Writes the SVG to orchestration-workflow/weather.svg and updates orchestration-workflow/output.md.
+description: 创建显示迪拜当前温度的SVG天气卡。写入SVG到orchestration-workflow/weather.svg并更新orchestration-workflow/output.md。
 ---
 
-# Weather SVG Creator Skill
+# 天气SVG创建器技能
 
-Creates a visual SVG weather card for Dubai, UAE and writes the output files.
+为迪拜阿联酋创建视觉SVG天气卡并写入输出文件。
 
-## Task
+## 任务
 
-You will receive a temperature value and unit (Celsius or Fahrenheit) from the calling context. Create an SVG weather card and write both the SVG and a markdown summary.
+您将从调用上下文中接收温度值和单位 (摄氏度或华氏度)。创建SVG天气卡并写入SVG和markdown摘要。
 
-## Instructions
+## 说明
 
-1. **Create SVG** — Use the SVG template from [reference.md](reference.md), replacing placeholders with actual values
-2. **Write SVG file** — Read then write to `orchestration-workflow/weather.svg`
-3. **Write summary** — Read then write to `orchestration-workflow/output.md` using the markdown template from [reference.md](reference.md)
+1. **创建SVG** — 使用 [reference.md](reference.md) 中的SVG模板，用实际值替换占位符
+2. **写入SVG文件** — 读取然后写入 `orchestration-workflow/weather.svg`
+3. **写入摘要** — 读取然后写入 `orchestration-workflow/output.md` 使用 [reference.md](reference.md) 中的markdown模板
 
-## Rules
+## 规则
 
-- Use the exact temperature value and unit provided — do not re-fetch or modify
-- The SVG must be self-contained and valid
-- Both output files go in the `orchestration-workflow/` directory
+- 使用提供的准确温度值和单位 — 不重新获取或修改
+- SVG必须是自包含的且有效
+- 两个输出文件都放在 `orchestration-workflow/` 目录中
 
-## Additional resources
+## 附加资源
 
-- For SVG template, output template, and design specs, see [reference.md](reference.md)
-- For example input/output pairs, see [examples.md](examples.md)
+- 关于SVG模板、输出模板和设计规格，参见 [reference.md](reference.md)
+- 关于示例输入/输出对，参见 [examples.md](examples.md)

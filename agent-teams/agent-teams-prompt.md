@@ -1,60 +1,59 @@
-Create an agent team to build a time orchestration workflow that displays
-the current Dubai time as a visual SVG card. The workflow follows the
-Command → Agent → Skill architecture pattern:
+创建一个代理团队来构建一个时间编排工作流，显示Dubai的当前时间作为
+可视化SVG卡片。该工作流遵循命令 → 代理 → 技能架构模式：
 
-- A command orchestrates the flow and handles user interaction
-- An agent fetches the live current time for Dubai using a preloaded skill
-- A skill creates a visual SVG time card from the fetched data
+- 命令编排流程并处理用户交互
+- 代理使用预加载的技能获取Dubai的实时当前时间
+- 技能从获取的数据创建可视化SVG时间卡片
 
-**Important**: All files must be created inside `agent-teams/.claude/` —
-NOT in the repo root's `.claude/` directory. This keeps the agent team's
-output self-contained and runnable via `cd agent-teams && claude`.
-Do NOT reference or copy the existing weather workflow — build everything from scratch.
+**重要**：所有文件必须在`agent-teams/.claude/`内部创建 —
+NOT在存储库根目录的`.claude/`目录中。这保持代理团队的
+输出是自包含的，可通过`cd agent-teams && claude`运行。
+不要引用或复制现有的天气工作流 — 从头开始构建所有内容。
 
-Assign these teammates:
+分配这些团队成员：
 
-1. **Command Architect** — Design and implement the `/time-orchestrator`
-   command in `agent-teams/.claude/commands/time-orchestrator.md`. The command should:
-   - Invoke the time-agent via the Agent tool (NOT bash) to fetch the
-     current time for Dubai, UAE (Asia/Dubai timezone, UTC+4)
-   - Invoke the time-svg-creator skill via the Skill tool to render the
-     SVG card from the fetched time data
-   - Use model: haiku in the frontmatter
-   - Include critical requirements: sequential flow, correct tool usage
-     (Agent tool for agents, Skill tool for skills), and an output summary
-   Coordinate with the other teammates via the shared task list to agree
-   on the data contract ({time, timezone, formatted}) passed between components.
+1. **命令架构师** — 在`agent-teams/.claude/commands/time-orchestrator.md`中
+   设计并实现`/time-orchestrator`命令。该命令应该：
+   - 通过代理工具（NOT bash）调用time-agent来获取
+     Dubai（阿联酋）的当前时间（Asia/Dubai时区，UTC+4）
+   - 通过技能工具调用time-svg-creator技能来渲染
+     从获取的时间数据生成的SVG卡片
+   - 在frontmatter中使用model: haiku
+   - 包含关键要求：顺序流、正确的工具使用
+     （代理工具用于代理，技能工具用于技能）和输出摘要
+   通过共享任务列表与其他团队成员协调以同意
+   在组件之间传递的数据契约({time, timezone, formatted})。
 
-2. **Agent Engineer** — Design and implement the `time-agent` in
-   `agent-teams/.claude/agents/time-agent.md` and its preloaded `time-fetcher`
-   skill in `agent-teams/.claude/skills/time-fetcher/SKILL.md`. The agent should:
-   - Fetch the current time for Dubai (Asia/Dubai, UTC+4) using Bash
-     with `TZ='Asia/Dubai' date '+%Y-%m-%d %H:%M:%S %Z'`
-   - Return the time value, timezone name, and formatted string to the command
-   - Use frontmatter: tools (Bash), model: haiku, color: blue, maxTurns: 3
-   - Preload the time-fetcher skill via the `skills:` field
-   The time-fetcher skill (`agent-teams/.claude/skills/time-fetcher/SKILL.md`)
-   should contain the bash command for Dubai time, the expected output format,
-   and set user-invocable: false since it is agent-only domain knowledge.
-   Post the agreed data contract to the shared task list so the Command
-   Architect and Skill Designer can align on the interface.
+2. **代理工程师** — 在`agent-teams/.claude/agents/time-agent.md`中
+   设计并实现`time-agent`及其预加载的`time-fetcher`
+   技能在`agent-teams/.claude/skills/time-fetcher/SKILL.md`中。代理应该：
+   - 使用Bash获取Dubai的当前时间（Asia/Dubai，UTC+4）
+     使用`TZ='Asia/Dubai' date '+%Y-%m-%d %H:%M:%S %Z'`
+   - 将时间值、时区名称和格式化字符串返回给命令
+   - 使用frontmatter：tools (Bash)、model: haiku、color: blue、maxTurns: 3
+   - 通过`skills:`字段预加载time-fetcher技能
+   time-fetcher技能(`agent-teams/.claude/skills/time-fetcher/SKILL.md`)
+   应该包含用于Dubai时间的bash命令、预期的输出格式，
+   并设置user-invocable: false因为它是代理专用的领域知识。
+   将同意的数据契约发布到共享任务列表，以便命令
+   架构师和技能设计师可以在接口上对齐。
 
-3. **Skill Designer** — Design and implement the `time-svg-creator`
-   skill in `agent-teams/.claude/skills/time-svg-creator/SKILL.md` with supporting
-   files `reference.md` (SVG template + output template) and `examples.md`
-   (example input/output pairs). The skill should:
-   - Receive a time value, timezone, and formatted string from the calling context
-   - Create a self-contained SVG time card for Dubai showing the current time
-   - Write the SVG to `agent-teams/output/dubai-time.svg`
-   - Write a markdown summary to `agent-teams/output/output.md`
-   - Use the exact time provided — never re-fetch
-   - Keep templates in reference.md (SVG markup with placeholders, markdown
-     output template) and example pairs in examples.md
-   Also create the `agent-teams/output/` directory for the output files.
+3. **技能设计师** — 在`agent-teams/.claude/skills/time-svg-creator/SKILL.md`中
+   设计并实现`time-svg-creator`技能，使用支持
+   文件`reference.md`（SVG模板+输出模板）和`examples.md`
+   （示例输入/输出对）。技能应该：
+   - 从调用上下文接收时间值、时区和格式化字符串
+   - 为Dubai创建一个自包含的SVG时间卡片显示当前时间
+   - 将SVG写入`agent-teams/output/dubai-time.svg`
+   - 将markdown摘要写入`agent-teams/output/output.md`
+   - 使用提供的确切时间 — 永远不要重新获取
+   - 在reference.md中保留模板（带占位符的SVG标记、markdown
+     输出模板）和example.md中的示例对
+   还创建`agent-teams/output/`目录用于输出文件。
 
-All three teammates should create tasks in the shared task list to
-coordinate the data contract: the agent returns {time, timezone, formatted},
-the command passes it through context, and the skill consumes it.
-Start all three in parallel since the components are independent —
-they only need to agree on the data interface, not wait on each other's
-implementation.
+所有三位团队成员应该在共享任务列表中创建任务以
+协调数据契约：代理返回{time, timezone, formatted}，
+命令通过上下文传递它，技能使用它。
+并行启动所有三个，因为组件是独立的 —
+他们只需要在数据接口上达成一致，不需要等待彼此的
+实现。

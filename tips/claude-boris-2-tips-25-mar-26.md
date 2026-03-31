@@ -1,48 +1,48 @@
-# Squash Merging & PR Size Distribution — Tips from Boris Cherny
+# 压缩合并和 PR 大小分布 — 来自 Boris Cherny 的提示
 
-A summary of insights shared by Boris Cherny ([@bcherny](https://x.com/bcherny)), creator of Claude Code, on March 25, 2026.
+Boris Cherny（[@bcherny](https://x.com/bcherny)）Claude Code 创建者于 2026 年 3 月 25 日分享的见解总结。
 
 <table width="100%">
 <tr>
-<td><a href="../">← Back to Claude Code Best Practice</a></td>
+<td><a href="../">← 返回 Claude Code 最佳实践</a></td>
 <td align="right"><img src="../!/claude-jumping.svg" alt="Claude" width="60" /></td>
 </tr>
 </table>
 
 ---
 
-## 1/ 266 Contributions in a Single Day — Always Squash
+## 1/ 单日 266 个贡献 — 总是压缩
 
-Boris shared his GitHub contribution graph showing **266 contributions on March 24th** — from **141 PRs, always squashed** with a median of **118 lines** per PR.
+Boris 分享了他的 GitHub 贡献图显示**3 月 24 日 266 个贡献** — 来自**141 个 PR，总是压缩**，每个 PR 中位数为**118 行**。
 
-- Squash merging combines all branch commits into a single commit on the target branch — keeping history clean and linear
-- Each PR = one commit makes it easy to revert entire features and simplifies `git bisect`
-- At high-velocity AI-assisted workflows (141 PRs/day), squash is the pragmatic choice — individual "fix lint", "try this" commits within a branch are noise
+- 压缩合并将所有分支提交合并到目标分支上的单个提交 — 保持历史清洁和线性
+- 每个 PR = 一个提交使得易于恢复整个特性并简化 `git bisect`
+- 在高速度 AI 辅助工作流（141 PR/天），压缩是实用的选择 — 分支内的单个"修复 lint"、"尝试这个"提交是噪音
 
-<a href="https://x.com/bcherny/status/2038552880018538749"><img src="assets/boris-25-mar-26/1.png" alt="Boris Cherny — 266 contributions, always squashed" width="50%" /></a>
+<a href="https://x.com/bcherny/status/2038552880018538749"><img src="assets/boris-25-mar-26/1.png" alt="Boris Cherny — 266 贡献，总是压缩" width="50%" /></a>
 
 ---
 
-## 2/ PR Size Distribution — Keep PRs Small
+## 2/ PR 大小分布 — 保持 PR 小
 
-Boris shared the size distribution across those 141 PRs, totaling **45,032 lines changed** (additions + deletions):
+Boris 分享了跨那 141 个 PR 的大小分布，总计**45,032 行改变**（添加 + 删除）：
 
-| Metric | Lines (add+del) | Meaning |
+| 指标 | 行数（添加+删除） | 含义 |
 |--------|---------------:|---------|
-| **p50** | **118** | Median PR size — half of all PRs were 118 lines or fewer |
-| p90 | 498 | 90% of PRs were under 500 lines |
-| **p99** | **2,978** | Only ~1 PR exceeded ~3K lines |
-| min | 2 | Smallest PR — a quick 2-line fix |
-| max | 10,459 | Largest single PR — likely a migration or generated code |
+| **p50** | **118** | 中位 PR 大小 — 一半的 PR 是 118 行或更少 |
+| p90 | 498 | 90% PR 在 500 行以下 |
+| **p99** | **2,978** | 仅 ~1 PR 超过 ~3K 行 |
+| min | 2 | 最小 PR — 快速 2 行修复 |
+| max | 10,459 | 最大单个 PR — 可能是迁移或生成代码 |
 
-- A **median of 118 lines** means most PRs are focused and reviewable, even at 141 PRs/day
-- The distribution is heavily right-skewed — the occasional large PR is inevitable (bulk renames, migrations), but the norm is tight
-- Small PRs reduce merge conflict risk, are easier to review, and pair perfectly with squash merging for clean reverts
+- **中位数 118 行**意味着大多数 PR 在 141 PR/天时是聚焦和可审查的
+- 分布严重右倾 — 偶尔的大 PR 不可避免（批量重命名、迁移），但规范是紧的
+- 小 PR 减少合并冲突风险，更容易审查，并与压缩合并完美配对用于清洁还原
 
-<a href="https://x.com/bcherny/status/2038552880018538749"><img src="assets/boris-25-mar-26/2.png" alt="Boris Cherny — PR size distribution table" width="50%" /></a>
+<a href="https://x.com/bcherny/status/2038552880018538749"><img src="assets/boris-25-mar-26/2.png" alt="Boris Cherny — PR 大小分布表" width="50%" /></a>
 
 ---
 
-## Sources
+## 来源
 
-- [Boris Cherny (@bcherny) on X — March 25, 2026](https://x.com/bcherny)
+- [Boris Cherny (@bcherny) X — 2026 年 3 月 25 日](https://x.com/bcherny)

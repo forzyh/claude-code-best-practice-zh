@@ -1,47 +1,47 @@
-# MCP Servers Best Practice
+# MCP 服务器最佳实践
 
 ![Last Updated](https://img.shields.io/badge/Last_Updated-Mar%2002%2C%202026%2012%3A30%20PM%20PKT-white?style=flat&labelColor=555)<br>
 [![Implemented](https://img.shields.io/badge/Implemented-2ea44f?style=flat)](../.mcp.json)
 
-MCP (Model Context Protocol) servers extend Claude Code with connections to external tools, databases, and APIs. This guide covers recommended servers for daily use and configuration best practices.
+MCP（模型上下文协议）服务器通过连接到外部工具、数据库和 API 来扩展 Claude Code。本指南涵盖日常使用的推荐服务器和配置最佳实践。
 
 <table width="100%">
 <tr>
-<td><a href="../">← Back to Claude Code Best Practice</a></td>
+<td><a href="../">← 返回 Claude Code 最佳实践</a></td>
 <td align="right"><img src="../!/claude-jumping.svg" alt="Claude" width="60" /></td>
 </tr>
 </table>
 
 ---
 
-## MCP Servers for Daily Use
+## 日常使用的 MCP 服务器
 
-> *"Went overboard with 15 MCP servers thinking more = better. Ended up using only 4 daily."* — [r/mcp](https://reddit.com/r/mcp/comments/1mj0fxs/) (682 upvotes)
+> *"认为更多 = 更好，装了 15 个 MCP 服务器。最后每天只用 4 个。"* — [r/mcp](https://reddit.com/r/mcp/comments/1mj0fxs/)（682 赞）
 
-| MCP Server | What It Does | Resources |
+| MCP 服务器 | 功能 | 资源 |
 |------------|-------------|-----------|
-| [**Context7**](https://github.com/upstash/context7) | Fetches up-to-date library docs into context. Prevents hallucinated APIs from outdated training data | [Reddit: "by far the best MCP for coding"](https://reddit.com/r/mcp/comments/1qarjqm/) · [npm](https://www.npmjs.com/package/@upstash/context7-mcp) |
-| [**Playwright**](https://github.com/microsoft/playwright-mcp) | Browser automation — implement, test, and verify UI features autonomously. Screenshots, navigation, form testing | [Reddit: essential for frontend](https://reddit.com/r/mcp/comments/1m59pk0/) · [Docs](https://playwright.dev/) |
-| [**Claude in Chrome**](https://github.com/nicobailon/claude-code-in-chrome-mcp) | Connects Claude to your real Chrome browser — inspect console, network, DOM. Debug what users actually see | [Reddit: "game changer" for debugging](https://reddit.com/r/mcp/comments/1qarjqm/5_mcps_that_have_genuinely_made_me_10x_faster/nza0i7t/) · [Comparison Report](../reports/claude-in-chrome-v-chrome-devtools-mcp.md) |
-| [**DeepWiki**](https://github.com/devanshusemwal/deepwiki-mcp) | Fetches structured wiki-style documentation for any GitHub repo — architecture, API surface, relationships | [Reddit: "put it behind a gateway with Context7"](https://reddit.com/r/mcp/comments/1qarjqm/) |
-| [**Excalidraw**](https://github.com/antonpk1/excalidraw-mcp-app) | Generate architecture diagrams, flowcharts, and system designs as hand-drawn Excalidraw sketches from prompts | [GitHub](https://github.com/antonpk1/excalidraw-mcp-app) |
+| [**Context7**](https://github.com/upstash/context7) | 将最新库文档获取到上下文中。防止来自过时训练数据的幻觉 API | [Reddit："到目前为止最好的编码 MCP"](https://reddit.com/r/mcp/comments/1qarjqm/) · [npm](https://www.npmjs.com/package/@upstash/context7-mcp) |
+| [**Playwright**](https://github.com/microsoft/playwright-mcp) | 浏览器自动化 — 自主实现、测试和验证 UI 功能。屏幕截图、导航、表单测试 | [Reddit：前端必需](https://reddit.com/r/mcp/comments/1m59pk0/) · [文档](https://playwright.dev/) |
+| [**Claude in Chrome**](https://github.com/nicobailon/claude-code-in-chrome-mcp) | 连接 Claude 到您真实的 Chrome 浏览器 — 检查控制台、网络、DOM。调试用户实际看到的内容 | [Reddit："改变游戏规则"调试](https://reddit.com/r/mcp/comments/1qarjqm/5_mcps_that_have_genuinely_made_me_10x_faster/nza0i7t/) · [对比报告](../reports/claude-in-chrome-v-chrome-devtools-mcp.md) |
+| [**DeepWiki**](https://github.com/devanshusemwal/deepwiki-mcp) | 获取任何 GitHub 仓库的结构化 wiki 式文档 — 架构、API 表面、关系 | [Reddit："将其放在网关后，配合 Context7"](https://reddit.com/r/mcp/comments/1qarjqm/) |
+| [**Excalidraw**](https://github.com/antonpk1/excalidraw-mcp-app) | 从提示生成架构图、流程图和系统设计，作为手绘 Excalidraw 草图 | [GitHub](https://github.com/antonpk1/excalidraw-mcp-app) |
 
-Research (Context7/DeepWiki) -> Debug (Playwright/Chrome) -> Document (Excalidraw)
+研究 (Context7/DeepWiki) -> 调试 (Playwright/Chrome) -> 文档 (Excalidraw)
 
 ---
 
-## Configuration
+## 配置
 
-MCP servers are configured in `.mcp.json` at the project root (project-scoped) or in `~/.claude.json` (user-scoped).
+MCP 服务器在项目根目录的 `.mcp.json`（项目范围）或 `~/.claude.json`（用户范围）中配置。
 
-### Server Types
+### 服务器类型
 
-| Type | Transport | Example |
+| 类型 | 传输 | 示例 |
 |------|-----------|---------|
-| **stdio** | Spawns a local process | `npx`, `python`, binary |
-| **http** | Connects to a remote URL | HTTP/SSE endpoint |
+| **stdio** | 生成本地进程 | `npx`、`python`、二进制 |
+| **http** | 连接到远程 URL | HTTP/SSE 端点 |
 
-### Example `.mcp.json`
+### 示例 `.mcp.json`
 
 ```json
 {
@@ -66,7 +66,7 @@ MCP servers are configured in `.mcp.json` at the project root (project-scoped) o
 }
 ```
 
-Use environment variable expansion for secrets instead of committing API keys in `.mcp.json`:
+使用环境变量扩展来处理密钥，而不是在 `.mcp.json` 中提交 API 密钥：
 
 ```json
 {
@@ -79,19 +79,19 @@ Use environment variable expansion for secrets instead of committing API keys in
 }
 ```
 
-### Settings for MCP Servers
+### MCP 服务器的设置
 
-These settings in `.claude/settings.json` control MCP server approval:
+`.claude/settings.json` 中的这些设置控制 MCP 服务器批准：
 
-| Key | Type | Description |
+| 键 | 类型 | 说明 |
 |-----|------|-------------|
-| `enableAllProjectMcpServers` | boolean | Auto-approve all `.mcp.json` servers without prompting |
-| `enabledMcpjsonServers` | array | Allowlist of specific server names to auto-approve |
-| `disabledMcpjsonServers` | array | Blocklist of specific server names to reject |
+| `enableAllProjectMcpServers` | boolean | 自动批准所有 `.mcp.json` 服务器而无需提示 |
+| `enabledMcpjsonServers` | array | 自动批准的特定服务器名称的允许列表 |
+| `disabledMcpjsonServers` | array | 拒绝的特定服务器名称的阻止列表 |
 
-### Permission Rules for MCP Tools
+### MCP 工具的权限规则
 
-MCP tools follow the `mcp__<server>__<tool>` naming convention in permission rules:
+MCP 工具遵循权限规则中的 `mcp__<server>__<tool>` 命名约定：
 
 ```json
 {
@@ -110,23 +110,23 @@ MCP tools follow the `mcp__<server>__<tool>` naming convention in permission rul
 
 ---
 
-## MCP Scopes
+## MCP 范围
 
-MCP servers can be defined at three levels:
+MCP 服务器可以在三个级别定义：
 
-| Scope | Location | Purpose |
+| 范围 | 位置 | 目的 |
 |-------|----------|---------|
-| **Project** | `.mcp.json` (repo root) | Team-shared servers, committed to git |
-| **User** | `~/.claude.json` (`mcpServers` key) | Personal servers across all projects |
-| **Subagent** | Agent frontmatter (`mcpServers` field) | Servers scoped to a specific subagent |
+| **项目** | `.mcp.json`（仓库根目录） | 团队共享服务器，提交到 git |
+| **用户** | `~/.claude.json`（`mcpServers` 键） | 跨所有项目的个人服务器 |
+| **子代理** | 代理前言（`mcpServers` 字段） | 范围限于特定子代理的服务器 |
 
-Precedence: Subagent > Project > User
+优先级：子代理 > 项目 > 用户
 
 ---
 
-## Sources
+## 来源
 
-- [MCP Servers — Claude Code Docs](https://code.claude.com/docs/en/mcp)
-- [Model Context Protocol Specification](https://modelcontextprotocol.io/)
-- [5 MCPs that have genuinely made me 10x faster — r/mcp](https://reddit.com/r/mcp/comments/1qarjqm/)
-- [MCP Server Overload Discussion — r/mcp](https://reddit.com/r/mcp/comments/1mj0fxs/)
+- [MCP 服务器 — Claude Code 文档](https://code.claude.com/docs/en/mcp)
+- [模型上下文协议规范](https://modelcontextprotocol.io/)
+- [5 个让我快 10 倍的 MCP — r/mcp](https://reddit.com/r/mcp/comments/1qarjqm/)
+- [MCP 服务器超载讨论 — r/mcp](https://reddit.com/r/mcp/comments/1mj0fxs/)

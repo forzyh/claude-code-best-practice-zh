@@ -1,246 +1,246 @@
-# Changelog — README CONCEPTS Section
+# 变更日志 — README 概念部分
 
-Tracks drift between the README CONCEPTS table and official Claude Code documentation.
+追踪 README 概念表与官方 Claude Code 文档之间的差异。
 
-## Status Legend
+## 状态说明
 
-| Status | Meaning |
+| 状态 | 含义 |
 |--------|---------|
-| ✅ `COMPLETE (reason)` | Action was taken and resolved successfully |
-| ❌ `INVALID (reason)` | Finding was incorrect, not applicable, or intentional |
-| ✋ `ON HOLD (reason)` | Action deferred — waiting on external dependency or user decision |
+| ✅ `完成 (原因)` | 操作已成功执行 |
+| ❌ `无效 (原因)` | 发现不正确、不适用或有意为之 |
+| ✋ `待处理 (原因)` | 操作延迟，等待外部依赖或用户决定 |
 
 ---
 
 ## [2026-03-02 11:14 AM PKT] Claude Code v2.1.63
 
-| # | Priority | Type | Action | Status |
+| # | 优先级 | 类型 | 操作 | 状态 |
 |---|----------|------|--------|--------|
-| 1 | HIGH | Broken URL | Fix Permissions URL from `/iam` to `/permissions` | ✅ COMPLETE (URL updated to /permissions) |
-| 2 | HIGH | Missing Concept | Add Agent Teams row to CONCEPTS table | ✅ COMPLETE (row added with ~\/\.claude\/teams\/ location) |
-| 3 | HIGH | Missing Concept | Add Keybindings row to CONCEPTS table | ✅ COMPLETE (row added with ~\/\.claude\/keybindings\.json location) |
-| 4 | HIGH | Missing Concept | Add Model Configuration row to CONCEPTS table | ✅ COMPLETE (row added with \.claude\/settings\.json location) |
-| 5 | HIGH | Missing Concept | Add Auto Memory row to CONCEPTS table | ✅ COMPLETE (row added with ~\/\.claude\/projects\/<project>\/memory\/ location) |
-| 6 | HIGH | Stale Anchor | Fix Rules URL anchor from `#modular-rules-with-clauderules` to `#organize-rules-with-clauderules` | ✅ COMPLETE (anchor updated) |
-| 7 | MED | Missing Concept | Add Checkpointing row to CONCEPTS table | ✅ COMPLETE (row added with automatic git-based location) |
-| 8 | MED | Missing Concept | Add Status Line row to CONCEPTS table | ✅ COMPLETE (row added with ~\/\.claude\/settings\.json location) |
-| 9 | MED | Missing Concept | Add Remote Control row to CONCEPTS table | ✅ COMPLETE (row added with CLI \/ claude\.ai location) |
-| 10 | MED | Missing Concept | Add Fast Mode row to CONCEPTS table | ✅ COMPLETE (row added with \.claude\/settings\.json location) |
-| 11 | MED | Missing Concept | Add Headless Mode row to CONCEPTS table | ✅ COMPLETE (row added with CLI flag -p location) |
-| 12 | LOW | Changed Description | Update Memory description to mention auto memory | ✅ COMPLETE (description and location updated) |
-| 13 | LOW | Changed Location | Update MCP Servers location to include `.mcp.json` | ✅ COMPLETE (location updated to include .mcp.json) |
-| 14 | LOW | Missing Badge | Add Implemented badge to Hooks row | ✅ COMPLETE (Implemented badge added linking to .claude/hooks/) |
+| 1 | 高 | 损坏的 URL | 修复权限 URL 从 `/iam` 改为 `/permissions` | ✅ 完成 (URL 已更新为 /permissions) |
+| 2 | 高 | 缺失概念 | 添加代理团队行到概念表 | ✅ 完成 (行已添加，带有 ~\/\.claude\/teams\/ 位置) |
+| 3 | 高 | 缺失概念 | 添加快捷键行到概念表 | ✅ 完成 (行已添加，带有 ~\/\.claude\/keybindings\.json 位置) |
+| 4 | 高 | 缺失概念 | 添加模型配置行到概念表 | ✅ 完成 (行已添加，带有 \.claude\/settings\.json 位置) |
+| 5 | 高 | 缺失概念 | 添加自动内存行到概念表 | ✅ 完成 (行已添加，带有 ~\/\.claude\/projects\/<project>\/memory\/ 位置) |
+| 6 | 高 | 陈旧的锚点 | 修复规则 URL 锚点从 `#modular-rules-with-clauderules` 改为 `#organize-rules-with-clauderules` | ✅ 完成 (锚点已更新) |
+| 7 | 中 | 缺失概念 | 添加检查点行到概念表 | ✅ 完成 (行已添加，带有自动 git 位置) |
+| 8 | 中 | 缺失概念 | 添加状态行到概念表 | ✅ 完成 (行已添加，带有 ~\/\.claude\/settings\.json 位置) |
+| 9 | 中 | 缺失概念 | 添加远程控制行到概念表 | ✅ 完成 (行已添加，带有 CLI \/ claude\.ai 位置) |
+| 10 | 中 | 缺失概念 | 添加快速模式行到概念表 | ✅ 完成 (行已添加，带有 \.claude\/settings\.json 位置) |
+| 11 | 中 | 缺失概念 | 添加无头模式行到概念表 | ✅ 完成 (行已添加，带有 CLI 标志 -p 位置) |
+| 12 | 低 | 更改描述 | 更新内存描述以提及自动内存 | ✅ 完成 (描述和位置已更新) |
+| 13 | 低 | 更改位置 | 更新 MCP 服务器位置以包括 `.mcp.json` | ✅ 完成 (位置已更新以包括 .mcp.json) |
+| 14 | 低 | 缺失徽章 | 为钩子行添加已实现徽章 | ✅ 完成 (已实现徽章已添加，链接到 .claude/hooks/) |
 
 ---
 
 ## [2026-03-02 11:57 AM PKT] Claude Code v2.1.63
 
-| # | Priority | Type | Action | Status |
+| # | 优先级 | 类型 | 操作 | 状态 |
 |---|----------|------|--------|--------|
-| 1 | HIGH | Table Consolidation | Consolidate CONCEPTS table from 22 rows to 10 rows — fold related concepts as inline doc links | ✅ COMPLETE (22 → 10 rows) |
-| 2 | MED | Merged Concept | Fold Marketplaces into Plugins row as inline link | ✅ COMPLETE (linked to /discover-plugins) |
-| 3 | MED | Merged Concept | Fold Agent Teams into Sub-Agents row as inline link | ✅ COMPLETE (linked to /agent-teams) |
-| 4 | MED | Merged Concept | Fold Permissions, Model Config, Output Styles, Sandboxing, Keybindings, Status Line, Fast Mode into Settings row as inline links | ✅ COMPLETE (7 concepts folded with doc links) |
-| 5 | MED | Merged Concept | Fold Auto Memory and Rules into Memory row as inline links | ✅ COMPLETE (linked to /memory and /memory#organize-rules-with-clauderules) |
-| 6 | MED | Merged Concept | Fold Headless Mode into Remote Control row as inline link | ✅ COMPLETE (linked to /headless) |
-| 7 | LOW | Reorder | Reorder table by logical grouping: building blocks → extension → config → context → runtime | ✅ COMPLETE (grouped by concern, not chronology) |
+| 1 | 高 | 表合并 | 将概念表从 22 行合并为 10 行 — 将相关概念作为内联文档链接折叠 | ✅ 完成 (22 → 10 行) |
+| 2 | 中 | 合并概念 | 将市场折叠到插件行中作为内联链接 | ✅ 完成 (链接到 /discover-plugins) |
+| 3 | 中 | 合并概念 | 将代理团队折叠到子代理行中作为内联链接 | ✅ 完成 (链接到 /agent-teams) |
+| 4 | 中 | 合并概念 | 将权限、模型配置、输出样式、沙箱、快捷键、状态行、快速模式折叠到设置行中作为内联链接 | ✅ 完成 (7 个概念用文档链接折叠) |
+| 5 | 中 | 合并概念 | 将自动内存和规则折叠到内存行中作为内联链接 | ✅ 完成 (链接到 /memory 和 /memory#organize-rules-with-clauderules) |
+| 6 | 中 | 合并概念 | 将无头模式折叠到远程控制行中作为内联链接 | ✅ 完成 (链接到 /headless) |
+| 7 | 低 | 重新排序 | 按逻辑分组重新排序表：构建块 → 扩展 → 配置 → 上下文 → 运行时 | ✅ 完成 (按关注度分组，而不是按时间顺序) |
 
 ---
 
 ## [2026-03-07 08:40 AM PKT] Claude Code v2.1.71
 
-| # | Priority | Type | Action | Status |
+| # | 优先级 | 类型 | 操作 | 状态 |
 |---|----------|------|--------|--------|
-| 1 | HIGH | Broken URL | Fix `context-management` → `interactive-mode` in TIPS (lines 112, 115, 135) | ✅ COMPLETE (3 occurrences replaced with interactive-mode) |
-| 2 | HIGH | Broken URL | Fix `model-configuration` → `model-config` in TIPS (lines 115, 116, 135) | ✅ COMPLETE (3 occurrences replaced with model-config) |
-| 3 | HIGH | Broken URL | Fix `usage-billing` → `costs` in TIPS (line 115) | ✅ COMPLETE (replaced with costs) |
-| 4 | HIGH | Broken URL | Remove `cowork` URL in STARTUPS (line 167) — page does not exist | ✅ COMPLETE (hyperlink removed, plain text kept) |
-| 5 | HIGH | Missing Concept | Add Scheduled Tasks row to CONCEPTS and Hot section (`/loop`, cron tools) | ✅ COMPLETE (added by user to both tables + /loop tip + Boris tweet) |
-| 6 | MED | Changed Location | Update Agent Teams location from `.claude/agents/<name>.md` to `built-in (env var)` | ✅ COMPLETE (location updated to built-in env var) |
+| 1 | 高 | 损坏的 URL | 修复 `context-management` → `interactive-mode` 在提示中 (第 112、115、135 行) | ✅ 完成 (3 个出现替换为 interactive-mode) |
+| 2 | 高 | 损坏的 URL | 修复 `model-configuration` → `model-config` 在提示中 (第 115、116、135 行) | ✅ 完成 (3 个出现替换为 model-config) |
+| 3 | 高 | 损坏的 URL | 修复 `usage-billing` → `costs` 在提示中 (第 115 行) | ✅ 完成 (替换为 costs) |
+| 4 | 高 | 损坏的 URL | 在启动中移除 `cowork` URL (第 167 行) — 页面不存在 | ✅ 完成 (移除超链接，保留纯文本) |
+| 5 | 高 | 缺失概念 | 添加计划任务行到概念和热部分 (`/loop`, cron 工具) | ✅ 完成 (由用户添加到两个表 + /loop 提示 + Boris tweet) |
+| 6 | 中 | 更改位置 | 更新代理团队位置从 `.claude/agents/<name>.md` 改为 `built-in (env var)` | ✅ 完成 (位置已更新为内置环境变量) |
 
 ---
 
 ## [2026-03-10 01:18 PM PKT] Claude Code v2.1.72
 
-| # | Priority | Type | Action | Status |
+| # | 优先级 | 类型 | 操作 | 状态 |
 |---|----------|------|--------|--------|
-| 1 | HIGH | Broken URL | Fix Commands URL from `/slash-commands` to `/skills` in CONCEPTS table (line 24) — `/slash-commands` serves Skills page content; docs say "commands merged into skills" | ❌ INVALID (URL still resolves; user chose to keep as-is) |
-| 2 | HIGH | Broken URL | Fix Commands URL from `/slash-commands` to `/skills` in TIPS section (line 108) — same stale URL | ❌ INVALID (URL still resolves; user chose to keep as-is) |
-| 3 | MED | Missing Inline Link | Add Interactive Mode (`/interactive-mode`) as inline link to CLI Startup Flags row — covers /compact, /clear, /context, /extra-usage | ✅ COMPLETE (inline link added to CLI Startup Flags description) |
-| 4 | MED | Missing Inline Link | Add Costs (`/costs`) as inline link to Settings row — covers /usage, billing, pay-as-you-go | ❌ INVALID (user chose to skip) |
-| 5 | LOW | Missing Concept | Consider adding IDE Integrations row (VS Code, JetBrains, Desktop App, Web) or inline links to Best Practices | ❌ INVALID (user chose to skip — platform surfaces, not configuration concepts) |
-| 6 | HIGH | Missing Concept | Add Code Review row to Hot table — multi-agent PR analysis (research preview, Teams & Enterprise) | ✅ COMPLETE (row added as first Hot entry with blog link and best practice tweet) |
-| 7 | MED | New Badge | Create `!/tags/beta.svg` tag (yellow, 38x20px) and add to Code Review and Agent Teams in Hot table | ✅ COMPLETE (beta.svg created; added to Code Review and Agent Teams rows) |
-| 8 | MED | Reorder | Sort Hot table by release date (most recent first): Code Review → Scheduled Tasks → Voice Mode → Agent Teams → Remote Control → Git Worktrees → Ralph Wiggum | ✅ COMPLETE (Voice Mode and Agent Teams swapped to match chronological order) |
+| 1 | 高 | 损坏的 URL | 修复概念表中的命令 URL 从 `/slash-commands` 改为 `/skills` (第 24 行) — `/slash-commands` 提供技能页面内容；文档说"命令合并到技能中" | ❌ 无效 (URL 仍然解决；用户选择保持原样) |
+| 2 | 高 | 损坏的 URL | 修复提示部分中的命令 URL 从 `/slash-commands` 改为 `/skills` (第 108 行) — 相同的陈旧 URL | ❌ 无效 (URL 仍然解决；用户选择保持原样) |
+| 3 | 中 | 缺失内联链接 | 为 CLI 启动标志行添加交互模式 (`/interactive-mode`) 作为内联链接 — 涵盖 /compact、/clear、/context、/extra-usage | ✅ 完成 (内联链接已添加到 CLI 启动标志描述) |
+| 4 | 中 | 缺失内联链接 | 为设置行添加成本 (`/costs`) 作为内联链接 — 涵盖 /usage、计费、按使用付费 | ❌ 无效 (用户选择跳过) |
+| 5 | 低 | 缺失概念 | 考虑添加 IDE 集成行 (VS Code、JetBrains、桌面应用、网络) 或内联链接到最佳实践 | ❌ 无效 (用户选择跳过 — 平台表面，不是配置概念) |
+| 6 | 高 | 缺失概念 | 添加代码审查行到热表 — 多代理 PR 分析 (研究预览，团队和企业) | ✅ 完成 (行已添加为第一个热条目，带有博客链接和最佳实践 tweet) |
+| 7 | 中 | 新徽章 | 创建 `!/tags/beta.svg` 标签 (黄色，38x20px) 并添加到热表中的代码审查和代理团队 | ✅ 完成 (beta.svg 已创建；添加到代码审查和代理团队行) |
+| 8 | 中 | 重新排序 | 按发布日期对热表排序 (最新优先)：代码审查 → 计划任务 → 语音模式 → 代理团队 → 远程控制 → Git 工作树 → Ralph Wiggum | ✅ 完成 (语音模式和代理团队互换以匹配时间顺序) |
 
 ---
 
 ## [2026-03-12 12:22 PM PKT] Claude Code v2.1.74
 
-| # | Priority | Type | Action | Status |
+| # | 优先级 | 类型 | 操作 | 状态 |
 |---|----------|------|--------|--------|
-| 1 | HIGH | Broken URL | Fix Commands URL from `/slash-commands` to `/skills` in CONCEPTS table (line 24) — `/slash-commands` redirects to `/skills` page | ❌ INVALID (RECURRING from 2026-03-10; URL still resolves; user chose to keep as-is) |
-| 2 | LOW | Verification | All external docs URLs validated — no broken links found | ✅ COMPLETE (all 20+ URLs return valid pages) |
-| 3 | LOW | Verification | All local badge file paths validated — no missing files | ✅ COMPLETE (all badge targets exist on filesystem) |
-| 4 | LOW | Verification | Memory anchor `#organize-rules-with-clauderules` validated on target page | ✅ COMPLETE (heading exists on /memory page) |
-| 5 | LOW | Verification | All CONCEPTS descriptions checked against official docs | ✅ COMPLETE (no description drift detected) |
+| 1 | 高 | 损坏的 URL | 修复概念表中的命令 URL 从 `/slash-commands` 改为 `/skills` (第 24 行) — `/slash-commands` 重定向到 `/skills` 页面 | ❌ 无效 (从 2026-03-10 开始重复；URL 仍然解决；用户选择保持原样) |
+| 2 | 低 | 验证 | 所有外部文档 URL 已验证 — 没有发现损坏的链接 | ✅ 完成 (所有 20+ URL 返回有效页面) |
+| 3 | 低 | 验证 | 所有本地徽章文件路径已验证 — 没有缺失文件 | ✅ 完成 (所有徽章目标存在于文件系统上) |
+| 4 | 低 | 验证 | 内存锚点 `#organize-rules-with-clauderules` 在目标页面上已验证 | ✅ 完成 (标题存在于 /memory 页面) |
+| 5 | 低 | 验证 | 所有概念描述已针对官方文档进行检查 | ✅ 完成 (没有检测到描述差异) |
 
 ---
 
 ## [2026-03-15 12:48 PM PKT] Claude Code v2.1.76
 
-| # | Priority | Type | Action | Status |
+| # | 优先级 | 类型 | 操作 | 状态 |
 |---|----------|------|--------|--------|
-| 1 | HIGH | Stale URL | Commands URL `/slash-commands` serves Skills page — docs say "commands merged into skills" | ❌ INVALID (RECURRING from 2026-03-10; URL still resolves; user chose to keep as-is) |
-| 2 | MED | Missing Badges | Remote Control (Hot) has zero badges — only Hot item without any BP or Impl badge | ✅ COMPLETE (BP badge added linking to official docs page) |
-| 3 | LOW | Naming | "Sub-Agents" in README vs "subagents" (one word) in official docs — cosmetic inconsistency | ✅ COMPLETE (renamed to "Subagents" in CONCEPTS table) |
-| 4 | LOW | Verification | All 27 external docs URLs validated — no broken links found | ✅ COMPLETE (all URLs return valid pages) |
-| 5 | LOW | Verification | All local badge file paths validated — no missing files | ✅ COMPLETE (all badge targets exist on filesystem) |
-| 6 | LOW | Verification | Memory anchor `#organize-rules-with-clauderules` confirmed on /memory page | ✅ COMPLETE (section heading exists) |
-| 7 | LOW | Verification | All CONCEPTS descriptions checked against official docs — no drift detected | ✅ COMPLETE (descriptions accurate for all 13 CONCEPTS + 9 Hot rows) |
+| 1 | 高 | 陈旧的 URL | 命令 URL `/slash-commands` 提供技能页面 — 文档说"命令合并到技能中" | ❌ 无效 (从 2026-03-10 开始重复；URL 仍然解决；用户选择保持原样) |
+| 2 | 中 | 缺失徽章 | 远程控制 (热) 有零徽章 — 唯一没有任何 BP 或 Impl 徽章的热项目 | ✅ 完成 (BP 徽章已添加，链接到官方文档页面) |
+| 3 | 低 | 命名 | README 中的"子代理"vs 官方文档中的"subagents" (一个单词) — 化妆品不一致 | ✅ 完成 (在概念表中重命名为"Subagents") |
+| 4 | 低 | 验证 | 所有 27 个外部文档 URL 已验证 — 没有发现损坏的链接 | ✅ 完成 (所有 URL 返回有效页面) |
+| 5 | 低 | 验证 | 所有本地徽章文件路径已验证 — 没有缺失文件 | ✅ 完成 (所有徽章目标存在于文件系统上) |
+| 6 | 低 | 验证 | 内存锚点 `#organize-rules-with-clauderules` 已在 /memory 页面上确认 | ✅ 完成 (节标题存在) |
+| 7 | 低 | 验证 | 所有概念描述已针对官方文档进行检查 — 没有检测到差异 | ✅ 完成 (所有 13 个概念 + 9 个热行的描述准确) |
 
 ---
 
 ## [2026-03-17 12:46 PM PKT] Claude Code v2.1.77
 
-| # | Priority | Type | Action | Status |
+| # | 优先级 | 类型 | 操作 | 状态 |
 |---|----------|------|--------|--------|
-| 1 | HIGH | Stale URL | Commands URL `/slash-commands` serves Skills page — docs say "commands merged into skills" | ❌ INVALID (RECURRING from 2026-03-10; URL still resolves; user chose to keep as-is) |
-| 2 | HIGH | Changed Description | Hooks description says "Deterministic scripts" but hooks now include 4 types: command, HTTP, prompt, and agent — only command hooks are deterministic | ✅ COMPLETE (updated to "User-defined handlers (scripts, HTTP, prompts, agents)" in CONCEPTS table) |
-| 3 | MED | Missing Concept | Desktop App has dedicated docs page at `/desktop` — not in CONCEPTS or Hot table | ❌ INVALID (user chose to skip — Desktop is a platform surface, not a configuration concept) |
-| 4 | MED | Changed URL | Hooks docs now split into Guide (`/hooks-guide`) and Reference (`/hooks`) — CONCEPTS links only to Reference | ✅ COMPLETE (Guide link added as inline link in Hooks row description) |
-| 5 | LOW | Verification | All 28 external docs URLs validated — no broken links found | ✅ COMPLETE (all URLs return valid pages including /slash-commands redirect) |
-| 6 | LOW | Verification | All local badge file paths validated — no missing files | ✅ COMPLETE (all 20 badge targets exist on filesystem) |
-| 7 | LOW | Verification | Memory anchor `#organize-rules-with-clauderules` confirmed on /memory page | ✅ COMPLETE (section heading exists) |
-| 8 | LOW | Verification | All CONCEPTS descriptions checked against official docs | ✅ COMPLETE (Hooks description drift detected — see #2) |
+| 1 | 高 | 陈旧的 URL | 命令 URL `/slash-commands` 提供技能页面 — 文档说"命令合并到技能中" | ❌ 无效 (从 2026-03-10 开始重复；URL 仍然解决；用户选择保持原样) |
+| 2 | 高 | 更改描述 | 钩子描述说"确定性脚本"但钩子现在包括 4 种类型：命令、HTTP、提示和代理 — 仅命令钩子是确定性的 | ✅ 完成 (在概念表中更新为"用户定义的处理程序 (脚本、HTTP、提示、代理)") |
+| 3 | 中 | 缺失概念 | 桌面应用有专用文档页面在 `/desktop` — 不在概念或热表中 | ❌ 无效 (用户选择跳过 — 桌面是平台表面，不是配置概念) |
+| 4 | 中 | 更改 URL | 钩子文档现在分为指南 (`/hooks-guide`) 和参考 (`/hooks`) — 概念仅链接到参考 | ✅ 完成 (指南链接已作为内联链接添加到钩子行描述) |
+| 5 | 低 | 验证 | 所有 28 个外部文档 URL 已验证 — 没有发现损坏的链接 | ✅ 完成 (所有 URL 返回有效页面，包括 /slash-commands 重定向) |
+| 6 | 低 | 验证 | 所有本地徽章文件路径已验证 — 没有缺失文件 | ✅ 完成 (所有 20 个徽章目标存在于文件系统上) |
+| 7 | 低 | 验证 | 内存锚点 `#organize-rules-with-clauderules` 已在 /memory 页面上确认 | ✅ 完成 (节标题存在) |
+| 8 | 低 | 验证 | 所有概念描述已针对官方文档进行检查 | ✅ 完成 (钩子描述差异已检测 — 见 #2) |
 
 ---
 
 ## [2026-03-18 11:43 PM PKT] Claude Code v2.1.78
 
-| # | Priority | Type | Action | Status |
+| # | 优先级 | 类型 | 操作 | 状态 |
 |---|----------|------|--------|--------|
-| 1 | HIGH | Stale URL | Commands URL `/slash-commands` serves Skills page — docs say "commands merged into skills" | ❌ INVALID (RECURRING from 2026-03-10; URL still resolves; user chose to keep as-is) |
-| 2 | HIGH | Changed URL+Name | Voice Mode in Hot table links to tweet instead of official docs `/voice-dictation`; official name is "Voice Dictation" | ✅ COMPLETE (renamed to "Voice Dictation", linked to /voice-dictation, description updated; BP badge kept linking to tweet; also updated in STARTUPS table) |
-| 3 | LOW | Verification | All 29 external docs URLs validated — no broken links found | ✅ COMPLETE (all URLs return valid pages including /slash-commands redirect) |
-| 4 | LOW | Verification | All local badge file paths validated — no missing files | ✅ COMPLETE (all 20+ badge targets exist on filesystem) |
-| 5 | LOW | Verification | Memory anchor `#organize-rules-with-clauderules` confirmed on /memory page | ✅ COMPLETE (section heading exists) |
-| 6 | LOW | Verification | All CONCEPTS descriptions checked against official docs — no drift detected | ✅ COMPLETE (all descriptions accurate) |
+| 1 | 高 | 陈旧的 URL | 命令 URL `/slash-commands` 提供技能页面 — 文档说"命令合并到技能中" | ❌ 无效 (从 2026-03-10 开始重复；URL 仍然解决；用户选择保持原样) |
+| 2 | 高 | 更改的 URL+名称 | 热表中的语音模式链接到 tweet 而不是官方文档 `/voice-dictation`；官方名称是"语音听写" | ✅ 完成 (重命名为"语音听写", 链接到 /voice-dictation, 描述已更新；BP 徽章保留链接到 tweet；也在启动表中更新) |
+| 3 | 低 | 验证 | 所有 29 个外部文档 URL 已验证 — 没有发现损坏的链接 | ✅ 完成 (所有 URL 返回有效页面，包括 /slash-commands 重定向) |
+| 4 | 低 | 验证 | 所有本地徽章文件路径已验证 — 没有缺失文件 | ✅ 完成 (所有 20+ 个徽章目标存在于文件系统上) |
+| 5 | 低 | 验证 | 内存锚点 `#organize-rules-with-clauderules` 已在 /memory 页面上确认 | ✅ 完成 (节标题存在) |
+| 6 | 低 | 验证 | 所有概念描述已针对官方文档进行检查 — 没有检测到差异 | ✅ 完成 (所有描述准确) |
 
 ---
 
 ## [2026-03-19 11:59 AM PKT] Claude Code v2.1.79
 
-| # | Priority | Type | Action | Status |
+| # | 优先级 | 类型 | 操作 | 状态 |
 |---|----------|------|--------|--------|
-| 1 | HIGH | Stale URL | Commands URL `/slash-commands` serves Skills page — docs say "commands merged into skills" | ❌ INVALID (RECURRING from 2026-03-10; URL still resolves; user chose to keep as-is) |
-| 2 | LOW | Verification | All 30 external docs URLs validated — no broken links found | ✅ COMPLETE (all URLs return valid pages including /slash-commands redirect) |
-| 3 | LOW | Verification | All local badge file paths validated — no missing files | ✅ COMPLETE (all 20+ badge targets exist on filesystem) |
-| 4 | LOW | Verification | Memory anchor `#organize-rules-with-clauderules` confirmed on /memory page | ✅ COMPLETE (section heading exists) |
-| 5 | LOW | Verification | All CONCEPTS descriptions checked against official docs — no drift detected | ✅ COMPLETE (all descriptions accurate) |
+| 1 | 高 | 陈旧的 URL | 命令 URL `/slash-commands` 提供技能页面 — 文档说"命令合并到技能中" | ❌ 无效 (从 2026-03-10 开始重复；URL 仍然解决；用户选择保持原样) |
+| 2 | 低 | 验证 | 所有 30 个外部文档 URL 已验证 — 没有发现损坏的链接 | ✅ 完成 (所有 URL 返回有效页面，包括 /slash-commands 重定向) |
+| 3 | 低 | 验证 | 所有本地徽章文件路径已验证 — 没有缺失文件 | ✅ 完成 (所有 20+ 个徽章目标存在于文件系统上) |
+| 4 | 低 | 验证 | 内存锚点 `#organize-rules-with-clauderules` 已在 /memory 页面上确认 | ✅ 完成 (节标题存在) |
+| 5 | 低 | 验证 | 所有概念描述已针对官方文档进行检查 — 没有检测到差异 | ✅ 完成 (所有描述准确) |
 
 ---
 
 ## [2026-03-20 08:38 AM PKT] Claude Code v2.1.80
 
-| # | Priority | Type | Action | Status |
+| # | 优先级 | 类型 | 操作 | 状态 |
 |---|----------|------|--------|--------|
-| 1 | HIGH | Missing Concept | Add Channels row to Hot table — push events from Telegram/Discord/webhooks into running sessions (research preview, v2.1.80) | ✅ COMPLETE (row added as first Hot entry with beta badge and Reference link) |
-| 2 | HIGH | Stale URL | Commands URL `/slash-commands` serves Skills page — docs say "commands merged into skills" | ❌ INVALID (RECURRING from 2026-03-10; URL still resolves; user chose to keep as-is) |
-| 3 | MED | Missing Deep Link | Git Worktrees URL should anchor to `#run-parallel-claude-code-sessions-with-git-worktrees` | ✅ COMPLETE (anchor added to Git Worktrees URL in Hot table) |
-| 4 | LOW | Missing Inline Link | Plugins row could add `[Marketplaces](https://code.claude.com/docs/en/plugin-marketplaces)` sub-link | ✅ COMPLETE (Create Marketplaces inline link added to Plugins row) |
-| 5 | LOW | Verification | All 31 external docs URLs validated — no broken links found | ✅ COMPLETE (all URLs return valid pages including /slash-commands redirect) |
-| 6 | LOW | Verification | All local badge file paths validated — no missing files | ✅ COMPLETE (all 20+ badge targets exist on filesystem) |
-| 7 | LOW | Verification | Memory anchor `#organize-rules-with-clauderules` confirmed on /memory page | ✅ COMPLETE (section heading exists) |
-| 8 | LOW | Verification | All CONCEPTS descriptions checked against official docs — no drift detected | ✅ COMPLETE (all descriptions accurate) |
+| 1 | 高 | 缺失概念 | 添加频道行到热表 — 从 Telegram/Discord/webhooks 将事件推送到运行中的会话 (研究预览，v2.1.80) | ✅ 完成 (行已添加为第一个热条目，带有测试版徽章和参考链接) |
+| 2 | 高 | 陈旧的 URL | 命令 URL `/slash-commands` 提供技能页面 — 文档说"命令合并到技能中" | ❌ 无效 (从 2026-03-10 开始重复；URL 仍然解决；用户选择保持原样) |
+| 3 | 中 | 缺失的深度链接 | Git 工作树 URL 应该锚点到 `#run-parallel-claude-code-sessions-with-git-worktrees` | ✅ 完成 (锚点已添加到热表中的 Git 工作树 URL) |
+| 4 | 低 | 缺失的内联链接 | 插件行可以添加 `[创建市场](https://code.claude.com/docs/en/plugin-marketplaces)` 子链接 | ✅ 完成 (创建市场内联链接已添加到插件行) |
+| 5 | 低 | 验证 | 所有 31 个外部文档 URL 已验证 — 没有发现损坏的链接 | ✅ 完成 (所有 URL 返回有效页面，包括 /slash-commands 重定向) |
+| 6 | 低 | 验证 | 所有本地徽章文件路径已验证 — 没有缺失文件 | ✅ 完成 (所有 20+ 个徽章目标存在于文件系统上) |
+| 7 | 低 | 验证 | 内存锚点 `#organize-rules-with-clauderules` 已在 /memory 页面上确认 | ✅ 完成 (节标题存在) |
+| 8 | 低 | 验证 | 所有概念描述已针对官方文档进行检查 — 没有检测到差异 | ✅ 完成 (所有描述准确) |
 
 ---
 
 ## [2026-03-21 09:12 PM PKT] Claude Code v2.1.81
 
-| # | Priority | Type | Action | Status |
+| # | 优先级 | 类型 | 操作 | 状态 |
 |---|----------|------|--------|--------|
-| 1 | HIGH | Stale URL | Commands URL `/slash-commands` serves Skills page — docs say "commands merged into skills" | ❌ INVALID (RECURRING from 2026-03-10; URL still resolves; user chose to keep as-is) |
-| 2 | LOW | Verification | All 32 external docs URLs validated — no broken links found | ✅ COMPLETE (all URLs return valid pages including /slash-commands redirect) |
-| 3 | LOW | Verification | All local badge file paths validated — no missing files | ✅ COMPLETE (all 20+ badge targets exist on filesystem) |
-| 4 | LOW | Verification | Memory anchor `#organize-rules-with-clauderules` confirmed on /memory page | ✅ COMPLETE (section heading exists) |
-| 5 | LOW | Verification | Git Worktrees anchor `#run-parallel-claude-code-sessions-with-git-worktrees` confirmed on /common-workflows page | ✅ COMPLETE (section heading exists) |
-| 6 | LOW | Verification | All CONCEPTS descriptions checked against official docs — no drift detected | ✅ COMPLETE (all descriptions accurate) |
+| 1 | 高 | 陈旧的 URL | 命令 URL `/slash-commands` 提供技能页面 — 文档说"命令合并到技能中" | ❌ 无效 (从 2026-03-10 开始重复；URL 仍然解决；用户选择保持原样) |
+| 2 | 低 | 验证 | 所有 32 个外部文档 URL 已验证 — 没有发现损坏的链接 | ✅ 完成 (所有 URL 返回有效页面，包括 /slash-commands 重定向) |
+| 3 | 低 | 验证 | 所有本地徽章文件路径已验证 — 没有缺失文件 | ✅ 完成 (所有 20+ 个徽章目标存在于文件系统上) |
+| 4 | 低 | 验证 | 内存锚点 `#organize-rules-with-clauderules` 已在 /memory 页面上确认 | ✅ 完成 (节标题存在) |
+| 5 | 低 | 验证 | Git 工作树锚点 `#run-parallel-claude-code-sessions-with-git-worktrees` 已在 /common-workflows 页面上确认 | ✅ 完成 (节标题存在) |
+| 6 | 低 | 验证 | 所有概念描述已针对官方文档进行检查 — 没有检测到差异 | ✅ 完成 (所有描述准确) |
 
 ---
 
 ## [2026-03-23 09:53 PM PKT] Claude Code v2.1.81
 
-| # | Priority | Type | Action | Status |
+| # | 优先级 | 类型 | 操作 | 状态 |
 |---|----------|------|--------|--------|
-| 1 | HIGH | Stale URL | Commands URL `/slash-commands` serves Skills page — docs say "commands merged into skills" | ❌ INVALID (RECURRING from 2026-03-10; URL still resolves; user chose to keep as-is) |
-| 2 | LOW | Verification | All 33 external docs URLs validated — no broken links found | ✅ COMPLETE (all URLs return valid pages including /slash-commands redirect) |
-| 3 | LOW | Verification | All local badge file paths validated — no missing files | ✅ COMPLETE (all 20+ badge targets exist on filesystem) |
-| 4 | LOW | Verification | Memory anchor `#organize-rules-with-clauderules` confirmed on /memory page | ✅ COMPLETE (section heading exists) |
-| 5 | LOW | Verification | Git Worktrees anchor `#run-parallel-claude-code-sessions-with-git-worktrees` confirmed on /common-workflows page | ✅ COMPLETE (section heading exists) |
-| 6 | LOW | Verification | All CONCEPTS descriptions checked against official docs — no drift detected | ✅ COMPLETE (all descriptions accurate) |
+| 1 | 高 | 陈旧的 URL | 命令 URL `/slash-commands` 提供技能页面 — 文档说"命令合并到技能中" | ❌ 无效 (从 2026-03-10 开始重复；URL 仍然解决；用户选择保持原样) |
+| 2 | 低 | 验证 | 所有 33 个外部文档 URL 已验证 — 没有发现损坏的链接 | ✅ 完成 (所有 URL 返回有效页面，包括 /slash-commands 重定向) |
+| 3 | 低 | 验证 | 所有本地徽章文件路径已验证 — 没有缺失文件 | ✅ 完成 (所有 20+ 个徽章目标存在于文件系统上) |
+| 4 | 低 | 验证 | 内存锚点 `#organize-rules-with-clauderules` 已在 /memory 页面上确认 | ✅ 完成 (节标题存在) |
+| 5 | 低 | 验证 | Git 工作树锚点 `#run-parallel-claude-code-sessions-with-git-worktrees` 已在 /common-workflows 页面上确认 | ✅ 完成 (节标题存在) |
+| 6 | 低 | 验证 | 所有概念描述已针对官方文档进行检查 — 没有检测到差异 | ✅ 完成 (所有描述准确) |
 
 ---
 
 ## [2026-03-25 08:12 PM PKT] Claude Code v2.1.83
 
-| # | Priority | Type | Action | Status |
+| # | 优先级 | 类型 | 操作 | 状态 |
 |---|----------|------|--------|--------|
-| 1 | HIGH | Stale URL | Commands URL `/slash-commands` serves Skills page — docs say "commands merged into skills" | ❌ INVALID (RECURRING from 2026-03-10; URL still resolves; user chose to keep as-is) |
-| 2 | MED | Changed URL | Simplify & Batch primary link points to tweet instead of official docs `/skills#bundled-skills` — now officially bundled skills | ✅ COMPLETE (primary link updated to /skills#bundled-skills; BP badge kept linking to Boris's tweet) |
-| 3 | LOW | Verification | All 34 external docs URLs validated — no broken links found | ✅ COMPLETE (all URLs return valid pages including /slash-commands redirect) |
-| 4 | LOW | Verification | All local badge file paths validated — no missing files | ✅ COMPLETE (all 20+ badge targets exist on filesystem) |
-| 5 | LOW | Verification | Memory anchor `#organize-rules-with-clauderules` confirmed on /memory page | ✅ COMPLETE (section heading exists) |
-| 6 | LOW | Verification | Git Worktrees anchor `#run-parallel-claude-code-sessions-with-git-worktrees` confirmed on /common-workflows page | ✅ COMPLETE (section heading exists) |
-| 7 | LOW | Verification | All CONCEPTS descriptions checked against official docs — no drift detected | ✅ COMPLETE (all descriptions accurate) |
-| 8 | HIGH | Missing Concept | Add Auto Mode row to Hot table — background safety classifier replaces permission prompts (research preview, Team/Enterprise) | ✅ COMPLETE (row added as first Hot entry with beta badge, BP badge linking to @claudeai tweet, and blog link) |
+| 1 | 高 | 陈旧的 URL | 命令 URL `/slash-commands` 提供技能页面 — 文档说"命令合并到技能中" | ❌ 无效 (从 2026-03-10 开始重复；URL 仍然解决；用户选择保持原样) |
+| 2 | 中 | 更改的 URL | 简化和批量主链接指向 tweet 而不是官方文档 `/skills#bundled-skills` — 现在官方打包技能 | ✅ 完成 (主链接更新为 /skills#bundled-skills；BP 徽章保留链接到 Boris 的 tweet) |
+| 3 | 低 | 验证 | 所有 34 个外部文档 URL 已验证 — 没有发现损坏的链接 | ✅ 完成 (所有 URL 返回有效页面，包括 /slash-commands 重定向) |
+| 4 | 低 | 验证 | 所有本地徽章文件路径已验证 — 没有缺失文件 | ✅ 完成 (所有 20+ 个徽章目标存在于文件系统上) |
+| 5 | 低 | 验证 | 内存锚点 `#organize-rules-with-clauderules` 已在 /memory 页面上确认 | ✅ 完成 (节标题存在) |
+| 6 | 低 | 验证 | Git 工作树锚点 `#run-parallel-claude-code-sessions-with-git-worktrees` 已在 /common-workflows 页面上确认 | ✅ 完成 (节标题存在) |
+| 7 | 低 | 验证 | 所有概念描述已针对官方文档进行检查 — 没有检测到差异 | ✅ 完成 (所有描述准确) |
+| 8 | 高 | 缺失概念 | 添加自动模式行到热表 — 后台安全分类器替代权限提示 (研究预览，团队/企业) | ✅ 完成 (行已添加为第一个热条目，带有测试版徽章、BP 徽章链接到 @claudeai tweet，和博客链接) |
 
 ---
 
 ## [2026-03-26 01:05 PM PKT] Claude Code v2.1.84
 
-| # | Priority | Type | Action | Status |
+| # | 优先级 | 类型 | 操作 | 状态 |
 |---|----------|------|--------|--------|
-| 1 | HIGH | Stale URL | Commands URL `/slash-commands` serves Skills page — docs say "commands merged into skills" | ❌ INVALID (RECURRING from 2026-03-10; URL still resolves; user chose to keep as-is) |
-| 2 | MED | Missing Concept | Add Slack integration to Hot table — mention @Claude in Slack to route coding tasks to Claude Code web sessions | ✅ COMPLETE (row added after Channels with @Claude location and web session description) |
-| 3 | MED | Missing Concept | Add GitHub Actions / CI-CD to Hot table — automate PR reviews, issue triage, and code generation in CI/CD pipelines | ✅ COMPLETE (row added after Code Review with .github/workflows/ location and GitLab CI/CD inline link) |
-| 4 | LOW | Verification | All 35 external docs URLs validated — no broken links found | ✅ COMPLETE (all URLs return valid pages including /slash-commands redirect) |
-| 5 | LOW | Verification | All local badge file paths validated — no missing files | ✅ COMPLETE (all 20+ badge targets exist on filesystem) |
-| 6 | LOW | Verification | Memory anchor `#organize-rules-with-clauderules` confirmed on /memory page | ✅ COMPLETE (section heading exists) |
-| 7 | LOW | Verification | Git Worktrees anchor `#run-parallel-claude-code-sessions-with-git-worktrees` confirmed on /common-workflows page | ✅ COMPLETE (section heading exists) |
-| 8 | LOW | Verification | Auto Mode anchor `#eliminate-prompts-with-auto-mode` confirmed on /permission-modes page | ✅ COMPLETE (section heading exists) |
-| 9 | LOW | Verification | Bundled Skills anchor `#bundled-skills` confirmed on /skills page | ✅ COMPLETE (section heading exists) |
-| 10 | LOW | Verification | All CONCEPTS descriptions checked against official docs — no drift detected | ✅ COMPLETE (all descriptions accurate) |
+| 1 | 高 | 陈旧的 URL | 命令 URL `/slash-commands` 提供技能页面 — 文档说"命令合并到技能中" | ❌ 无效 (从 2026-03-10 开始重复；URL 仍然解决；用户选择保持原样) |
+| 2 | 中 | 缺失概念 | 添加 Slack 集成到热表 — 在 Slack 中提及 @Claude 以将编码任务路由到 Claude Code 网络会话 | ✅ 完成 (行已添加在频道后，带有 @Claude 位置和网络会话描述) |
+| 3 | 中 | 缺失概念 | 添加 GitHub Actions / CI-CD 到热表 — 在 CI/CD 管道中自动化 PR 审查、问题分类和代码生成 | ✅ 完成 (行已添加在代码审查后，带有 .github/workflows/ 位置和 GitLab CI/CD 内联链接) |
+| 4 | 低 | 验证 | 所有 35 个外部文档 URL 已验证 — 没有发现损坏的链接 | ✅ 完成 (所有 URL 返回有效页面，包括 /slash-commands 重定向) |
+| 5 | 低 | 验证 | 所有本地徽章文件路径已验证 — 没有缺失文件 | ✅ 完成 (所有 20+ 个徽章目标存在于文件系统上) |
+| 6 | 低 | 验证 | 内存锚点 `#organize-rules-with-clauderules` 已在 /memory 页面上确认 | ✅ 完成 (节标题存在) |
+| 7 | 低 | 验证 | Git 工作树锚点 `#run-parallel-claude-code-sessions-with-git-worktrees` 已在 /common-workflows 页面上确认 | ✅ 完成 (节标题存在) |
+| 8 | 低 | 验证 | 自动模式锚点 `#eliminate-prompts-with-auto-mode` 已在 /permission-modes 页面上确认 | ✅ 完成 (节标题存在) |
+| 9 | 低 | 验证 | 打包技能锚点 `#bundled-skills` 已在 /skills 页面上确认 | ✅ 完成 (节标题存在) |
+| 10 | 低 | 验证 | 所有概念描述已针对官方文档进行检查 — 没有检测到差异 | ✅ 完成 (所有描述准确) |
 
 ---
 
 ## [2026-03-27 06:37 PM PKT] Claude Code v2.1.85
 
-| # | Priority | Type | Action | Status |
+| # | 优先级 | 类型 | 操作 | 状态 |
 |---|----------|------|--------|--------|
-| 1 | HIGH | Stale URL | Commands URL `/slash-commands` serves Skills page — docs say "commands merged into skills" | ❌ INVALID (RECURRING from 2026-03-10; URL still resolves; user chose to keep as-is) |
-| 2 | MED | Missing Concept | Add Chrome integration to Hot table — browser automation via Claude in Chrome extension (beta, dedicated docs at `/chrome`) | ✅ COMPLETE (row added after GitHub Actions with --chrome location and beta badge) |
-| 3 | LOW | Verification | All 36 external docs URLs validated — no broken links found | ✅ COMPLETE (all URLs return valid pages including /slash-commands redirect) |
-| 4 | LOW | Verification | All local badge file paths validated — no missing files | ✅ COMPLETE (all 20+ badge targets exist on filesystem) |
-| 5 | LOW | Verification | Memory anchor `#organize-rules-with-clauderules` confirmed on /memory page | ✅ COMPLETE (section heading exists) |
-| 6 | LOW | Verification | Git Worktrees anchor `#run-parallel-claude-code-sessions-with-git-worktrees` confirmed on /common-workflows page | ✅ COMPLETE (section heading exists) |
-| 7 | LOW | Verification | Auto Mode anchor `#eliminate-prompts-with-auto-mode` confirmed on /permission-modes page | ✅ COMPLETE (section heading exists) |
-| 8 | LOW | Verification | Bundled Skills anchor `#bundled-skills` confirmed on /skills page | ✅ COMPLETE (section heading exists) |
-| 9 | LOW | Verification | All CONCEPTS descriptions checked against official docs — no drift detected | ✅ COMPLETE (all descriptions accurate) |
+| 1 | 高 | 陈旧的 URL | 命令 URL `/slash-commands` 提供技能页面 — 文档说"命令合并到技能中" | ❌ 无效 (从 2026-03-10 开始重复；URL 仍然解决；用户选择保持原样) |
+| 2 | 中 | 缺失概念 | 添加 Chrome 集成到热表 — 通过 Claude in Chrome 扩展的浏览器自动化 (测试版，专用文档在 `/chrome`) | ✅ 完成 (行已添加在 GitHub Actions 后，带有 --chrome 位置和测试版徽章) |
+| 3 | 低 | 验证 | 所有 36 个外部文档 URL 已验证 — 没有发现损坏的链接 | ✅ 完成 (所有 URL 返回有效页面，包括 /slash-commands 重定向) |
+| 4 | 低 | 验证 | 所有本地徽章文件路径已验证 — 没有缺失文件 | ✅ 完成 (所有 20+ 个徽章目标存在于文件系统上) |
+| 5 | 低 | 验证 | 内存锚点 `#organize-rules-with-clauderules` 已在 /memory 页面上确认 | ✅ 完成 (节标题存在) |
+| 6 | 低 | 验证 | Git 工作树锚点 `#run-parallel-claude-code-sessions-with-git-worktrees` 已在 /common-workflows 页面上确认 | ✅ 完成 (节标题存在) |
+| 7 | 低 | 验证 | 自动模式锚点 `#eliminate-prompts-with-auto-mode` 已在 /permission-modes 页面上确认 | ✅ 完成 (节标题存在) |
+| 8 | 低 | 验证 | 打包技能锚点 `#bundled-skills` 已在 /skills 页面上确认 | ✅ 完成 (节标题存在) |
+| 9 | 低 | 验证 | 所有概念描述已针对官方文档进行检查 — 没有检测到差异 | ✅ 完成 (所有描述准确) |
 
 ---
 
 ## [2026-03-28 06:04 PM PKT] Claude Code v2.1.86
 
-| # | Priority | Type | Action | Status |
+| # | 优先级 | 类型 | 操作 | 状态 |
 |---|----------|------|--------|--------|
-| 1 | HIGH | Stale URL | Commands URL `/slash-commands` serves Skills page — docs say "commands merged into skills" | ❌ INVALID (RECURRING from 2026-03-10; URL still resolves; user chose to keep as-is) |
-| 2 | MED | Missing Badge | Chrome row in Hot table has no BP badge — report exists at `reports/claude-in-chrome-v-chrome-devtools-mcp.md` | ✅ COMPLETE (BP badge added linking to reports/claude-in-chrome-v-chrome-devtools-mcp.md) |
-| 3 | LOW | Changed Description | Plugins description missing LSP servers — official docs list `.lsp.json` as plugin component | ✅ COMPLETE (added "and LSP servers" to Plugins description) |
-| 4 | LOW | Verification | All 37 external docs URLs validated — no broken links found | ✅ COMPLETE (all URLs return valid pages including /slash-commands redirect) |
-| 5 | LOW | Verification | All local badge file paths validated — no missing files | ✅ COMPLETE (all 20+ badge targets exist on filesystem) |
-| 6 | LOW | Verification | Memory anchor `#organize-rules-with-clauderules` confirmed on /memory page | ✅ COMPLETE (section heading `.claude/rules/` exists) |
-| 7 | LOW | Verification | Git Worktrees anchor `#run-parallel-claude-code-sessions-with-git-worktrees` confirmed on /common-workflows page | ✅ COMPLETE (section heading exists) |
-| 8 | LOW | Verification | Auto Mode anchor `#eliminate-prompts-with-auto-mode` confirmed on /permission-modes page | ✅ COMPLETE (section heading exists) |
-| 9 | LOW | Verification | Bundled Skills anchor `#bundled-skills` confirmed on /skills page | ✅ COMPLETE (section heading exists) |
-| 10 | LOW | Verification | All CONCEPTS descriptions checked against official docs — no drift detected | ✅ COMPLETE (all descriptions accurate except Plugins LSP note — see #3) |
+| 1 | 高 | 陈旧的 URL | 命令 URL `/slash-commands` 提供技能页面 — 文档说"命令合并到技能中" | ❌ 无效 (从 2026-03-10 开始重复；URL 仍然解决；用户选择保持原样) |
+| 2 | 中 | 缺失徽章 | 热表中的 Chrome 行没有 BP 徽章 — 报告存在于 `reports/claude-in-chrome-v-chrome-devtools-mcp.md` | ✅ 完成 (BP 徽章已添加，链接到 reports/claude-in-chrome-v-chrome-devtools-mcp.md) |
+| 3 | 低 | 更改描述 | 插件描述缺少 LSP 服务器 — 官方文档列出 `.lsp.json` 作为插件组件 | ✅ 完成 (添加"和 LSP 服务器"到插件描述) |
+| 4 | 低 | 验证 | 所有 37 个外部文档 URL 已验证 — 没有发现损坏的链接 | ✅ 完成 (所有 URL 返回有效页面，包括 /slash-commands 重定向) |
+| 5 | 低 | 验证 | 所有本地徽章文件路径已验证 — 没有缺失文件 | ✅ 完成 (所有 20+ 个徽章目标存在于文件系统上) |
+| 6 | 低 | 验证 | 内存锚点 `#organize-rules-with-clauderules` 已在 /memory 页面上确认 | ✅ 完成 (`.claude/rules/` 节标题存在) |
+| 7 | 低 | 验证 | Git 工作树锚点 `#run-parallel-claude-code-sessions-with-git-worktrees` 已在 /common-workflows 页面上确认 | ✅ 完成 (节标题存在) |
+| 8 | 低 | 验证 | 自动模式锚点 `#eliminate-prompts-with-auto-mode` 已在 /permission-modes 页面上确认 | ✅ 完成 (节标题存在) |
+| 9 | 低 | 验证 | 打包技能锚点 `#bundled-skills` 已在 /skills 页面上确认 | ✅ 完成 (节标题存在) |
+| 10 | 低 | 验证 | 所有概念描述已针对官方文档进行检查 — 没有检测到差异 | ✅ 完成 (所有描述准确，除了插件 LSP 注释 — 见 #3) |

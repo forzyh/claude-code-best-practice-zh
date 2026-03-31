@@ -1,103 +1,103 @@
-# Verification Checklist — Subagents Report
+# 验证清单 — 子代理报告
 
-Rules accumulate over time. Each workflow-changelog run MUST execute ALL rules at the specified depth. When a new type of drift is caught that an existing rule should have caught (but didn't exist or was too shallow), append a new rule here.
+规则随时间累积。每次 workflow-changelog 运行必须在指定深度执行所有规则。当捕获到现有规则应该检查但不存在或深度不够的新漂移类型时，请在此处附加新规则。
 
-## Depth Levels
+## 深度级别
 
-| Depth | Meaning | Example |
+| 深度 | 含义 | 示例 |
 |-------|---------|---------|
-| `exists` | Check if a section/table/file exists | "Does the report have a Memory Scopes table?" |
-| `presence-check` | Check if a specific item is present or absent | "Is the `color` field in the Frontmatter Fields table?" |
-| `content-match` | Compare actual values word-by-word against source | "Does the `model` field description match official docs?" |
-| `field-level` | Verify every individual field is accounted for | "Does each frontmatter field from official docs appear in the table?" |
-| `cross-file` | Same value must match across multiple files | "Does CLAUDE.md agent section match the report's field list?" |
+| `exists` | 检查某个部分/表格/文件是否存在 | "报告是否有内存作用域表?" |
+| `presence-check` | 检查特定项目是否存在或缺失 | "Frontmatter 字段表中是否有 `color` 字段?" |
+| `content-match` | 逐字比较实际值与源 | "`model` 字段描述是否与官方文档匹配?" |
+| `field-level` | 验证每个单独字段是否都已计入 | "官方文档中的每个 frontmatter 字段是否出现在表中?" |
+| `cross-file` | 同一值必须在多个文件中匹配 | "CLAUDE.md 代理部分是否与报告的字段列表匹配?" |
 
 ---
 
-## 1. Frontmatter Fields Table
+## 1. Frontmatter 字段表
 
-Rules that verify the Frontmatter Fields table against official docs.
+验证 Frontmatter 字段表与官方文档相符的规则。
 
-| # | Category | Check | Depth | Compare Against | Added | Origin |
+| # | 类别 | 检查 | 深度 | 比对目标 | 添加日期 | 来源 |
 |---|----------|-------|-------|-----------------|-------|--------|
-| 1A | Field Completeness | For each agent frontmatter field in official docs, verify it appears in the report's Frontmatter Fields table | field-level | sub-agents reference page | 2026-02-28 | Initial checklist — ensures no new fields are missed |
-| 1B | Field Types | For each field in the table, verify the Type column matches official docs | content-match | sub-agents reference page | 2026-02-28 | Initial checklist — type mismatches cause user confusion |
-| 1C | Required Status | For each field, verify the Required column matches official docs | content-match | sub-agents reference page | 2026-02-28 | Initial checklist — wrong required status causes broken agents |
-| 1D | Field Descriptions | For each field, verify the Description column accurately reflects official docs behavior | content-match | sub-agents reference page | 2026-02-28 | Initial checklist — stale descriptions mislead users |
+| 1A | 字段完整性 | 对于官方文档中的每个代理 frontmatter 字段，验证其出现在报告的 Frontmatter 字段表中 | field-level | 子代理参考页面 | 2026-02-28 | 初始清单 — 确保不遗漏任何新字段 |
+| 1B | 字段类型 | 对于表中的每个字段，验证类型列与官方文档匹配 | content-match | 子代理参考页面 | 2026-02-28 | 初始清单 — 类型不匹配导致用户困惑 |
+| 1C | 必需状态 | 对于每个字段，验证必需列与官方文档匹配 | content-match | 子代理参考页面 | 2026-02-28 | 初始清单 — 错误的必需状态导致代理损坏 |
+| 1D | 字段描述 | 对于每个字段，验证描述列准确反映官方文档行为 | content-match | 子代理参考页面 | 2026-02-28 | 初始清单 — 过时的描述误导用户 |
 
 ---
 
-## 2. Memory Scopes
+## 2. 内存作用域
 
-Rules that verify the Memory Scopes table.
+验证内存作用域表的规则。
 
-| # | Category | Check | Depth | Compare Against | Added | Origin |
+| # | 类别 | 检查 | 深度 | 比对目标 | 添加日期 | 来源 |
 |---|----------|-------|-------|-----------------|-------|--------|
-| 2A | Scope Completeness | Verify all memory scopes from official docs appear in the Memory Scopes table | field-level | sub-agents reference page | 2026-02-28 | Initial checklist — new scopes could be added |
-| 2B | Storage Locations | For each scope, verify the Storage Location column matches official docs | content-match | sub-agents reference page | 2026-02-28 | Initial checklist — wrong paths cause data loss |
+| 2A | 作用域完整性 | 验证官方文档中的所有内存作用域出现在内存作用域表中 | field-level | 子代理参考页面 | 2026-02-28 | 初始清单 — 可能会添加新作用域 |
+| 2B | 存储位置 | 对于每个作用域，验证存储位置列与官方文档匹配 | content-match | 子代理参考页面 | 2026-02-28 | 初始清单 — 错误的路径导致数据丢失 |
 
 ---
 
-## 3. Examples
+## 3. 示例
 
-Rules that verify example accuracy.
+验证示例准确性的规则。
 
-| # | Category | Check | Depth | Compare Against | Added | Origin |
+| # | 类别 | 检查 | 深度 | 比对目标 | 添加日期 | 来源 |
 |---|----------|-------|-------|-----------------|-------|--------|
-| 3A | Minimal Example | Verify the minimal example uses only required fields with valid syntax | content-match | sub-agents reference page | 2026-02-28 | Initial checklist — minimal example should stay minimal |
-| 3B | Full-Featured Example | Verify the full-featured example demonstrates ALL available frontmatter fields | field-level | sub-agents reference page | 2026-02-28 | Initial checklist — full example must show every field |
+| 3A | 最小示例 | 验证最小示例仅使用必需字段和有效语法 | content-match | 子代理参考页面 | 2026-02-28 | 初始清单 — 最小示例应保持最小化 |
+| 3B | 功能完整示例 | 验证功能完整示例演示所有可用的 frontmatter 字段 | field-level | 子代理参考页面 | 2026-02-28 | 初始清单 — 完整示例必须展示每个字段 |
 
 ---
 
-## 4. Scope & Priority
+## 4. 作用域和优先级
 
-Rules that verify scope and priority information.
+验证作用域和优先级信息的规则。
 
-| # | Category | Check | Depth | Compare Against | Added | Origin |
+| # | 类别 | 检查 | 深度 | 比对目标 | 添加日期 | 来源 |
 |---|----------|-------|-------|-----------------|-------|--------|
-| 4A | Priority Order | Verify the Scope and Priority table lists all agent locations in correct priority order | content-match | sub-agents reference page + CLI reference page | 2026-02-28 | Initial checklist — wrong priority order causes resolution bugs |
-| 4B | Invocation Methods | Verify the invocation methods table lists ALL invocation methods from CLI reference and sub-agents docs, including `--agent` (singular), `--agents` (plural), `/agents`, `claude agents`, Agent tool, and agent resumption | field-level | CLI reference page + sub-agents reference page | 2026-03-07 | `--agent` CLI flag was missing from the invocation table — it's a distinct invocation method for running Claude as a specific agent |
+| 4A | 优先级顺序 | 验证作用域和优先级表按正确的优先级顺序列出所有代理位置 | content-match | 子代理参考页面 + CLI 参考页面 | 2026-02-28 | 初始清单 — 错误的优先级顺序导致解决错误 |
+| 4B | 调用方法 | 验证调用方法表列出 CLI 参考和子代理文档中的所有调用方法，包括 `--agent` (单数)、`--agents` (复数)、`/agents`、`claude agents`、代理工具和代理恢复 | field-level | CLI 参考页面 + 子代理参考页面 | 2026-03-07 | 调用表中缺少 `--agent` CLI 标志 — 它是运行 Claude 作为特定代理的不同调用方法 |
 
 ---
 
-## 5. Cross-File Consistency
+## 5. 跨文件一致性
 
-Rules that verify consistency between the report and other repo files.
+验证报告与其他仓库文件之间一致性的规则。
 
-| # | Category | Check | Depth | Compare Against | Added | Origin |
+| # | 类别 | 检查 | 深度 | 比对目标 | 添加日期 | 来源 |
 |---|----------|-------|-------|-----------------|-------|--------|
-| 5A | CLAUDE.md Sync | Verify CLAUDE.md's Subagent Definition Structure section lists the same fields as the report's Frontmatter Fields table | cross-file | CLAUDE.md vs report | 2026-02-28 | Initial checklist — CLAUDE.md could drift from report |
+| 5A | CLAUDE.md 同步 | 验证 CLAUDE.md 的子代理定义结构部分列出与报告的 Frontmatter 字段表相同的字段 | cross-file | CLAUDE.md vs 报告 | 2026-02-28 | 初始清单 — CLAUDE.md 可能与报告不同步 |
 
 ---
 
-## 6. Process
+## 6. 流程
 
-Meta-rules about the workflow verification process itself.
+关于工作流验证流程本身的元规则。
 
-| # | Category | Check | Depth | Compare Against | Added | Origin |
+| # | 类别 | 检查 | 深度 | 比对目标 | 添加日期 | 来源 |
 |---|----------|-------|-------|-----------------|-------|--------|
-| 6A | Source Credibility Guard | Only flag items as drift if confirmed by official sources (sub-agents reference page, CLI reference page, GitHub changelog). Third-party blog sources may be outdated or wrong — use them for leads only, verify against official docs before flagging | content-match | official docs only | 2026-02-28 | Adopted from hooks workflow — prevents false positives from blog sources |
+| 6A | 来源可信度守卫 | 仅当由官方来源 (子代理参考页面、CLI 参考页面、GitHub 更改日志) 确认时，才将项目标记为漂移。第三方博客来源可能已过时或错误 — 仅用于索引，在标记前根据官方文档验证 | content-match | 仅官方文档 | 2026-02-28 | 采用自钩子工作流 — 防止博客来源的误报 |
 
 ---
 
-## 7. Agent Tables
+## 7. 代理表
 
-Rules that verify the Official Claude Agents and Agents in This Repository tables.
+验证官方 Claude 代理和此仓库中的代理表的规则。
 
-| # | Category | Check | Depth | Compare Against | Added | Origin |
+| # | 类别 | 检查 | 深度 | 比对目标 | 添加日期 | 来源 |
 |---|----------|-------|-------|-----------------|-------|--------|
-| 7A | Built-in Agent Completeness | Verify the "Official Claude Agents" table lists all built-in agent types with correct model, tools, and description | field-level | sub-agents reference page + changelog | 2026-02-28 | Report only had 3 of 5 built-in agents — `claude-code-guide` and `statusline-setup` were missing |
-| 7B | Repository Agent Completeness | Scan `.claude/agents/**/*.md` and verify every agent file appears in the "Agents in This Repository" table with correct model, color, tools, skills, and memory columns | field-level | `.claude/agents/**/*.md` file frontmatter | 2026-02-28 | Repo agents were manually maintained — new agents added to the repo were not reflected in the report |
-| 7C | Repository Agent Links | Verify each agent name in the "Agents in This Repository" table has a clickable link that resolves to the correct `.md` file | exists | resolved file path from `best-practice/` | 2026-02-28 | Agent names were made clickable — links must stay valid after file moves |
+| 7A | 内置代理完整性 | 验证"官方 Claude 代理"表列出所有内置代理类型，具有正确的模型、工具和描述 | field-level | 子代理参考页面 + 更改日志 | 2026-02-28 | 报告仅有 5 个内置代理中的 3 个 — `claude-code-guide` 和 `statusline-setup` 缺失 |
+| 7B | 仓库代理完整性 | 扫描 `.claude/agents/**/*.md` 并验证每个代理文件出现在"此仓库中的代理"表中，具有正确的模型、颜色、工具、技能和内存列 | field-level | `.claude/agents/**/*.md` 文件 frontmatter | 2026-02-28 | 仓库代理是手动维护的 — 添加到仓库的新代理未在报告中反映 |
+| 7C | 仓库代理链接 | 验证"此仓库中的代理"表中的每个代理名称都有可点击的链接，解析到正确的 `.md` 文件 | exists | 从 `best-practice/` 解析的文件路径 | 2026-02-28 | 代理名称已可点击 — 文件移动后链接必须保持有效 |
 
 ---
 
-## 8. Hyperlinks
+## 8. 超链接
 
-Rules that verify all hyperlinks in the report are valid.
+验证报告中所有超链接有效的规则。
 
-| # | Category | Check | Depth | Compare Against | Added | Origin |
+| # | 类别 | 检查 | 深度 | 比对目标 | 添加日期 | 来源 |
 |---|----------|-------|-------|-----------------|-------|--------|
-| 8A | Local File Links | Verify all relative file links (e.g. `../.claude/agents/weather-agent.md`) resolve to existing files | exists | local filesystem | 2026-02-28 | File moves (reports/ → best-practice/) broke relative links — must catch future breakage |
-| 8B | External URL Links | Verify all external URLs (e.g. `https://code.claude.com/docs/en/sub-agents`) return valid pages | exists | HTTP response | 2026-02-28 | External docs pages can be restructured or removed — must validate on each run |
-| 8C | Cross-File Reference Links | Verify links to other report files (e.g. `../reports/claude-agent-memory.md`) resolve to existing files | exists | local filesystem | 2026-02-28 | Reports can be moved or renamed — cross-references must stay in sync |
+| 8A | 本地文件链接 | 验证所有相对文件链接 (例如 `../.claude/agents/weather-agent.md`) 解析为现有文件 | exists | 本地文件系统 | 2026-02-28 | 文件移动 (reports/ → best-practice/) 破坏了相对链接 — 必须捕获未来的损坏 |
+| 8B | 外部 URL 链接 | 验证所有外部 URL (例如 `https://code.claude.com/docs/en/sub-agents`) 返回有效页面 | exists | HTTP 响应 | 2026-02-28 | 外部文档页面可能会重新结构化或删除 — 必须在每次运行时验证 |
+| 8C | 跨文件参考链接 | 验证其他报告文件的链接 (例如 `../reports/claude-agent-memory.md`) 解析为现有文件 | exists | 本地文件系统 | 2026-02-28 | 报告可能会移动或重命名 — 交叉引用必须保持同步 |

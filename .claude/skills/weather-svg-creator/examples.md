@@ -1,79 +1,79 @@
-# Weather SVG Creator — Examples
+# 天气SVG创建器 — 示例
 
-## Example 1: Celsius
+## 示例 1: 摄氏度
 
-### Input
+### 输入
 
 ```
 Temperature: 26.2°C
 Unit: Celsius
 ```
 
-### SVG Output (`orchestration-workflow/weather.svg`)
+### SVG输出 (`orchestration-workflow/weather.svg`)
 
 ```svg
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 160" width="300" height="160">
   <rect width="300" height="160" rx="12" fill="#1a1a2e"/>
-  <text x="150" y="45" text-anchor="middle" fill="#8892b0" font-family="system-ui" font-size="14">Unit: Celsius</text>
+  <text x="150" y="45" text-anchor="middle" fill="#8892b0" font-family="system-ui" font-size="14">单位: 摄氏度</text>
   <text x="150" y="100" text-anchor="middle" fill="#ccd6f6" font-family="system-ui" font-size="42" font-weight="bold">26.2°C</text>
-  <text x="150" y="140" text-anchor="middle" fill="#64ffda" font-family="system-ui" font-size="16">Dubai, UAE</text>
+  <text x="150" y="140" text-anchor="middle" fill="#64ffda" font-family="system-ui" font-size="16">迪拜，阿联酋</text>
 </svg>
 ```
 
-### Markdown Output (`orchestration-workflow/output.md`)
+### Markdown输出 (`orchestration-workflow/output.md`)
 
 ```markdown
-# Weather Result
+# 天气结果
 
-## Temperature
+## 温度
 26.2°C
 
-## Location
-Dubai, UAE
+## 位置
+迪拜，阿联酋
 
-## Unit
-Celsius
+## 单位
+摄氏度
 
-## SVG Card
-![Weather Card](weather.svg)
+## SVG卡
+![天气卡](weather.svg)
 ```
 
 ---
 
-## Example 2: Fahrenheit
+## 示例 2: 华氏度
 
-### Input
+### 输入
 
 ```
 Temperature: 79.2°F
 Unit: Fahrenheit
 ```
 
-### SVG Output (`orchestration-workflow/weather.svg`)
+### SVG输出 (`orchestration-workflow/weather.svg`)
 
 ```svg
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 160" width="300" height="160">
   <rect width="300" height="160" rx="12" fill="#1a1a2e"/>
-  <text x="150" y="45" text-anchor="middle" fill="#8892b0" font-family="system-ui" font-size="14">Unit: Fahrenheit</text>
+  <text x="150" y="45" text-anchor="middle" fill="#8892b0" font-family="system-ui" font-size="14">单位: 华氏度</text>
   <text x="150" y="100" text-anchor="middle" fill="#ccd6f6" font-family="system-ui" font-size="42" font-weight="bold">79.2°F</text>
-  <text x="150" y="140" text-anchor="middle" fill="#64ffda" font-family="system-ui" font-size="16">Dubai, UAE</text>
+  <text x="150" y="140" text-anchor="middle" fill="#64ffda" font-family="system-ui" font-size="16">迪拜，阿联酋</text>
 </svg>
 ```
 
-### Markdown Output (`orchestration-workflow/output.md`)
+### Markdown输出 (`orchestration-workflow/output.md`)
 
 ```markdown
-# Weather Result
+# 天气结果
 
-## Temperature
+## 温度
 79.2°F
 
-## Location
-Dubai, UAE
+## 位置
+迪拜，阿联酋
 
-## Unit
-Fahrenheit
+## 单位
+华氏度
 
-## SVG Card
-![Weather Card](weather.svg)
+## SVG卡
+![天气卡](weather.svg)
 ```

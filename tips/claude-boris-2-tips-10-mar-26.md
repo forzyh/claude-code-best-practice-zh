@@ -1,40 +1,40 @@
-# Code Review & Test Time Compute — Tips from Boris Cherny
+# 代码审查和测试时间计算 — 来自 Boris Cherny 的提示
 
-A summary of insights shared by Boris Cherny ([@bcherny](https://x.com/bcherny)), creator of Claude Code, on March 10, 2026.
+Boris Cherny（[@bcherny](https://x.com/bcherny)）Claude Code 创建者于 2026 年 3 月 10 日分享的见解总结。
 
 <table width="100%">
 <tr>
-<td><a href="../">← Back to Claude Code Best Practice</a></td>
+<td><a href="../">← 返回 Claude Code 最佳实践</a></td>
 <td align="right"><img src="../!/claude-jumping.svg" alt="Claude" width="60" /></td>
 </tr>
 </table>
 
 ---
 
-## 1/ Introducing Code Review
+## 1/ 介绍代码审查
 
-New in Claude Code: **Code Review**. A team of agents runs a deep review on every PR.
+Claude Code 中的新功能：**代码审查**。代理团队在每个 PR 上运行深度审查。
 
-- Built for Anthropic's own team first — code output per engineer is up **200% this year**, and reviews were the bottleneck
-- Boris has been using it for a few weeks and found it catches many real bugs he would not have noticed otherwise
-- When a PR opens, Claude dispatches a team of agents to hunt for bugs
+- 首先为 Anthropic 自己的团队构建 — 每个工程师的代码输出**今年上升 200%**，审查是瓶颈
+- Boris 已使用它几周并发现它捕获许多他本来不会注意到的真实错误
+- 当 PR 打开时，Claude 调派代理团队寻找错误
 
-<a href="https://x.com/bcherny/status/2031089411820228645"><img src="assets/boris-10-mar-26/0.png" alt="Boris Cherny announcing Code Review" width="50%" /></a>
-
----
-
-## 2/ Test Time Compute & Multiple Context Windows
-
-Roughly, the more tokens you throw at a coding problem, the better the result. Boris calls this **test time compute**.
-
-- Using **separate context windows** makes the result even better — this is what makes subagents work, and why one agent can cause bugs and another (using the same exact model) can find them
-- Similar to engineering teams: if Boris causes a bug, his coworker reviewing the code might find it more reliably than he can
-- In the limit, agents will probably write perfect bug-free code — until then, **multiple uncorrelated context windows** tends to be a good approach
-
-<a href="https://x.com/bcherny/status/2031151689219321886"><img src="assets/boris-10-mar-26/1.png" alt="Boris Cherny on test time compute" width="50%" /></a>
+<a href="https://x.com/bcherny/status/2031089411820228645"><img src="assets/boris-10-mar-26/0.png" alt="Boris Cherny 宣布代码审查" width="50%" /></a>
 
 ---
 
-## Sources
+## 2/ 测试时间计算和多个上下文窗口
 
-- [Boris Cherny (@bcherny) on X — March 10, 2026](https://x.com/bcherny)
+粗略地，你对编码问题投入的令牌越多，结果越好。Boris 称这为**测试时间计算**。
+
+- 使用**单独的上下文窗口**使结果更好 — 这是让子代理工作的原因，以及为什么一个代理可导致错误而另一个（使用完全相同的模型）可找到它们
+- 类似于工程团队：如果 Boris 导致一个错误，他的同事审查代码可能比他更可靠地找到它
+- 在极限中，代理可能会编写完美的无错代码 — 直到那时，**多个不相关的上下文窗口**往往是一个好方法
+
+<a href="https://x.com/bcherny/status/2031151689219321886"><img src="assets/boris-10-mar-26/1.png" alt="Boris Cherny 在测试时间计算上" width="50%" /></a>
+
+---
+
+## 来源
+
+- [Boris Cherny (@bcherny) X — 2026 年 3 月 10 日](https://x.com/bcherny)

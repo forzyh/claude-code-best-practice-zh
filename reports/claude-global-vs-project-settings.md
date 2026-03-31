@@ -1,205 +1,205 @@
-# Claude Code: Global vs Project-Level Features
+# Claude Code：全局 vs 项目级特性
 
-A comprehensive comparison of which Claude Code features are global-only (`~/.claude/`) versus which have both global and project-level (`.claude/`) equivalents.
+Claude Code 特性的综合比较，哪些是仅全局的 (`~/.claude/`)，哪些有全局和项目级（`.claude/`）等效。
 
 <table width="100%">
 <tr>
-<td><a href="../">← Back to Claude Code Best Practice</a></td>
+<td><a href="../">← 返回 Claude Code 最佳实践</a></td>
 <td align="right"><img src="../!/claude-jumping.svg" alt="Claude" width="60" /></td>
 </tr>
 </table>
 
-## Table of Contents
+## 目录
 
-1. [Overview](#overview)
-2. [Global-Only Features](#global-only-features)
-3. [Dual-Scope Features](#dual-scope-features)
-4. [Settings Precedence](#settings-precedence)
-5. [Directory Structure Comparison](#directory-structure-comparison)
-6. [Tasks System](#tasks-system)
-7. [Agent Teams](#agent-teams)
-8. [Design Principles](#design-principles)
-9. [Sources](#sources)
-
----
-
-## Overview
-
-Claude Code uses a **scope hierarchy** where some features exist at both the global (`~/.claude/`) and project (`.claude/`) levels, while others are exclusively global. The design principle: things that are *personal state* or *cross-project coordination* live globally; things that are *team-shareable project config* can live at the project level.
-
-- `~/.claude/` is your **user-level home** (global, all projects)
-- `.claude/` inside a repo is your **project-level home** (scoped to that project)
+1. [概述](#概述)
+2. [仅全局特性](#仅全局特性)
+3. [双范围特性](#双范围特性)
+4. [设置优先级](#设置优先级)
+5. [目录结构比较](#目录结构比较)
+6. [任务系统](#任务系统)
+7. [代理团队](#代理团队)
+8. [设计原则](#设计原则)
+9. [来源](#来源)
 
 ---
 
-## Global-Only Features
+## 概述
 
-These live **only** under `~/.claude/` and cannot be scoped to a project:
+Claude Code 使用**范围层级**，其中某些特性存在于全局（`~/.claude/`）和项目（`.claude/`）两个级别，而其他特性仅全局。设计原则：*个人状态*或*跨项目协调*的事物全局生存；*团队可共享项目配置*的事物可以在项目级别生存。
 
-| Feature | Location | Purpose |
+- `~/.claude/` 是你的**用户级主目录**（全局，所有项目）
+- `.claude/` 在存储库内是你的**项目级主目录**（限于该项目）
+
+---
+
+## 仅全局特性
+
+这些**仅**在 `~/.claude/` 下生存，无法限定到项目：
+
+| 特性 | 位置 | 目的 |
 |---------|----------|---------|
-| **Tasks** | `~/.claude/tasks/` | Persistent task lists across sessions and agents |
-| **Agent Teams** | `~/.claude/teams/` | Multi-agent coordination configs (experimental, Feb 2026) |
-| **Auto Memory** | `~/.claude/projects/<hash>/memory/` | Claude's self-written learnings per project (personal, never shared) |
-| **Credentials & OAuth** | System keychain + `~/.claude.json` | API keys, OAuth tokens (never in project files) |
-| **Keybindings** | `~/.claude/keybindings.json` | Custom keyboard shortcuts |
-| **MCP User Servers** | `~/.claude.json` (`mcpServers` key) | Personal MCP servers across all projects |
-| **Preferences/Cache** | `~/.claude.json` | Theme, model, output style, session state |
+| **任务** | `~/.claude/tasks/` | 跨会话和代理的持久任务列表 |
+| **代理团队** | `~/.claude/teams/` | 多代理协调配置（实验，2026 年 2 月） |
+| **自动内存** | `~/.claude/projects/<hash>/memory/` | Claude 自写学习（个人，从不共享） |
+| **凭证和 OAuth** | 系统钥匙链 + `~/.claude.json` | API 密钥、OAuth 令牌（从不在项目文件中） |
+| **键绑定** | `~/.claude/keybindings.json` | 自定义键盘快捷键 |
+| **MCP 用户服务器** | `~/.claude.json`（`mcpServers` 键） | 跨所有项目的个人 MCP 服务器 |
+| **偏好/缓存** | `~/.claude.json` | 主题、模型、输出样式、会话状态 |
 
 ---
 
-## Dual-Scope Features
+## 双范围特性
 
-These exist at both levels, with **project-level taking precedence** over global:
+这些存在于两个级别，**项目级优先于全局**：
 
-| Feature | Global (`~/.claude/`) | Project (`.claude/`) | Precedence |
+| 特性 | 全局（`~/.claude/`） | 项目（`.claude/`） | 优先级 |
 |---------|----------------------|---------------------|------------|
-| **CLAUDE.md** | `~/.claude/CLAUDE.md` | `./CLAUDE.md` or `.claude/CLAUDE.md` | Project overrides global |
-| **Settings** | `~/.claude/settings.json` | `.claude/settings.json` + `.claude/settings.local.json` | Project > Global |
-| **Rules** | `~/.claude/rules/*.md` | `.claude/rules/*.md` | Project overrides |
-| **Agents/Subagents** | `~/.claude/agents/*.md` | `.claude/agents/*.md` | Project overrides |
-| **Commands** | `~/.claude/commands/*.md` | `.claude/commands/*.md` | Both available |
-| **Skills** | `~/.claude/skills/` | `.claude/skills/` | Both available |
-| **Hooks** | `~/.claude/hooks/` | `.claude/hooks/` | Both execute |
-| **MCP Servers** | `~/.claude.json` (user scope) | `.mcp.json` (project scope) | Three scopes: local > project > user |
+| **CLAUDE.md** | `~/.claude/CLAUDE.md` | `./CLAUDE.md` 或 `.claude/CLAUDE.md` | 项目覆盖全局 |
+| **设置** | `~/.claude/settings.json` | `.claude/settings.json` + `.claude/settings.local.json` | 项目 > 全局 |
+| **规则** | `~/.claude/rules/*.md` | `.claude/rules/*.md` | 项目覆盖 |
+| **代理/子代理** | `~/.claude/agents/*.md` | `.claude/agents/*.md` | 项目覆盖 |
+| **命令** | `~/.claude/commands/*.md` | `.claude/commands/*.md` | 两者可用 |
+| **技能** | `~/.claude/skills/` | `.claude/skills/` | 两者可用 |
+| **钩子** | `~/.claude/hooks/` | `.claude/hooks/` | 两者执行 |
+| **MCP 服务器** | `~/.claude.json`（用户范围） | `.mcp.json`（项目范围） | 三个范围：local > 项目 > 用户 |
 
 ---
 
-## Settings Precedence
+## 设置优先级
 
-User-writable settings apply in this override order (highest to lowest):
+用户可写设置按此覆盖顺序应用（从高到低）：
 
-| Priority | Location | Scope | Version Control | Purpose |
+| 优先级 | 位置 | 范围 | 版本控制 | 目的 |
 |----------|----------|-------|-----------------|---------|
-| 1 | Command line flags | Session | N/A | Single-session overrides |
-| 2 | `.claude/settings.local.json` | Project | No (git-ignored) | Personal project-specific |
-| 3 | `.claude/settings.json` | Project | Yes (committed) | Team-shared settings |
-| 4 | `~/.claude/settings.local.json` | User | N/A | Personal global overrides |
-| 5 | `~/.claude/settings.json` | User | N/A | Global personal settings |
+| 1 | 命令行标志 | 会话 | N/A | 单会话覆盖 |
+| 2 | `.claude/settings.local.json` | 项目 | 否（git 忽略） | 个人项目特定 |
+| 3 | `.claude/settings.json` | 项目 | 是（提交） | 团队共享设置 |
+| 4 | `~/.claude/settings.local.json` | 用户 | N/A | 个人全局覆盖 |
+| 5 | `~/.claude/settings.json` | 用户 | N/A | 全局个人设置 |
 
-Policy layer: `managed-settings.json` is organization-enforced and cannot be overridden by local files.
+策略层：`managed-settings.json` 由组织强制执行，无法被本地文件覆盖。
 
-**Important**: `deny` rules have the highest safety precedence and cannot be overridden by lower-priority allow/ask rules.
+**重要**：`deny` 规则具有最高安全优先级，无法被较低优先级的允许/询问规则覆盖。
 
 ---
 
-## Directory Structure Comparison
+## 目录结构比较
 
-### Global Scope (`~/.claude/`)
+### 全局范围（`~/.claude/`）
 
 ```
 ~/.claude/
-├── settings.json              # User-level settings (all projects)
-├── settings.local.json        # Personal overrides
-├── CLAUDE.md                  # User memory (all projects)
-├── agents/                    # User subagents (available to all projects)
+├── settings.json              # 用户级设置（所有项目）
+├── settings.local.json        # 个人覆盖
+├── CLAUDE.md                  # 用户内存（所有项目）
+├── agents/                    # 用户子代理（适用于所有项目）
 │   └── *.md
-├── rules/                     # User-level modular rules
+├── rules/                     # 用户级模块化规则
 │   └── *.md
-├── commands/                  # User-level commands
+├── commands/                  # 用户级命令
 │   └── *.md
-├── skills/                    # User-level skills
+├── skills/                    # 用户级技能
 │   └── */SKILL.md
-├── tasks/                     # GLOBAL-ONLY: Task lists
+├── tasks/                     # 全局特性：任务列表
 │   └── {task-list-id}/
-├── teams/                     # GLOBAL-ONLY: Agent team configs
+├── teams/                     # 全局特性：代理团队配置
 │   └── {team-name}/
 │       └── config.json
-├── projects/                  # GLOBAL-ONLY: Per-project auto-memory
+├── projects/                  # 全局特性：每项目自动内存
 │   └── {project-hash}/
 │       └── memory/
 │           ├── MEMORY.md
 │           └── *.md
-├── keybindings.json           # GLOBAL-ONLY: Keyboard shortcuts
-└── hooks/                     # User-level hooks
+├── keybindings.json           # 全局特性：键盘快捷键
+└── hooks/                     # 用户级钩子
     ├── scripts/
     └── config/
 
-~/.claude.json                 # GLOBAL-ONLY: MCP servers, OAuth, preferences, caches
+~/.claude.json                 # 全局特性：MCP 服务器、OAuth、偏好、缓存
 ```
 
-### Project Scope (`.claude/`)
+### 项目范围（`.claude/`）
 
 ```
 .claude/
-├── settings.json              # Team-shared settings
-├── settings.local.json        # Personal project overrides (git-ignored)
-├── CLAUDE.md                  # Project memory (alternative to ./CLAUDE.md)
-├── agents/                    # Project subagents
+├── settings.json              # 团队共享设置
+├── settings.local.json        # 个人项目覆盖（git 忽略）
+├── CLAUDE.md                  # 项目内存（`.claude/CLAUDE.md` 的替代）
+├── agents/                    # 项目子代理
 │   └── *.md
-├── rules/                     # Project-level modular rules
+├── rules/                     # 项目级模块化规则
 │   └── *.md
-├── commands/                  # Custom slash commands
+├── commands/                  # 自定义斜杠命令
 │   └── *.md
-├── skills/                    # Custom skills
+├── skills/                    # 自定义技能
 │   └── {skill-name}/
 │       ├── SKILL.md
 │       └── supporting-files/
-├── hooks/                     # Project-level hooks
+├── hooks/                     # 项目级钩子
 │   ├── scripts/
 │   └── config/
-└── plugins/                   # Installed plugins
+└── plugins/                   # 已安装插件
 
-.mcp.json                      # Project-scoped MCP servers (repo root)
+.mcp.json                      # 项目范围 MCP 服务器（存储库根目录）
 ```
 
 ---
 
-## Tasks System
+## 任务系统
 
-Introduced in **Claude Code v2.1.16** (January 22, 2026), replacing the deprecated TodoWrite system.
+在 **Claude Code v2.1.16**（2026 年 1 月 22 日）中引入，替代已弃用的 TodoWrite 系统。
 
-### Storage
+### 存储
 
-Tasks are stored at `~/.claude/tasks/` on the local filesystem (not in a cloud database). This makes task state auditable, version-controllable, and crash-recoverable.
+任务存储在本地文件系统上的 `~/.claude/tasks/` 处（不在云数据库中）。这使任务状态可审计、版本可控和崩溃可恢复。
 
-### Tools
+### 工具
 
-| Tool | Purpose |
+| 工具 | 目的 |
 |------|---------|
-| **TaskCreate** | Create a new task with `subject`, `description`, and `activeForm` |
-| **TaskGet** | Retrieve full details of a specific task by ID |
-| **TaskUpdate** | Change status, set owner, add dependencies, or delete |
-| **TaskList** | List all tasks with their current status |
+| **TaskCreate** | 创建带 `subject`、`description` 和 `activeForm` 的新任务 |
+| **TaskGet** | 按 ID 检索特定任务的完整详情 |
+| **TaskUpdate** | 更改状态、设置所有者、添加依赖或删除 |
+| **TaskList** | 列出所有任务及其当前状态 |
 
-### Task Lifecycle
+### 任务生命周期
 
 ```
-pending  →  in_progress  →  completed
+待处理  →  进行中  →  已完成
 ```
 
-### Dependency Management
+### 依赖管理
 
-Tasks can block other tasks via `addBlockedBy`/`addBlocks`, creating dependency graphs that prevent premature execution.
+任务可通过 `addBlockedBy`/`addBlocks` 阻止其他任务，创建依赖图防止过早执行。
 
-### Multi-Session Collaboration
+### 多会话协作
 
 ```bash
 CLAUDE_CODE_TASK_LIST_ID=my-project-tasks claude
 ```
 
-All sessions sharing the same ID see task updates in real-time, enabling parallel workstreams and session resumption.
+所有共享同一 ID 的会话实时看到任务更新，启用并行工作流和会话恢复。
 
-### Key Differences from Old Todos
+### 与旧代办事项的关键差异
 
-| Feature | Old Todos | New Tasks |
-|---------|-----------|-----------|
-| Scope | Single session | Cross-session, cross-agent |
-| Dependencies | None | Full dependency graph |
-| Storage | In-memory only | File system (`~/.claude/tasks/`) |
-| Persistence | Lost on session end | Survives restarts and crashes |
-| Multi-session | Not possible | Via `CLAUDE_CODE_TASK_LIST_ID` |
+| 特性 | 旧代办 | 新任务 |
+|--------|-----------|-----------|
+| 范围 | 单个会话 | 跨会话、跨代理 |
+| 依赖 | 无 | 完整依赖图 |
+| 存储 | 仅内存 | 文件系统（`~/.claude/tasks/`） |
+| 持久性 | 会话末尾丧失 | 存活重启和崩溃 |
+| 多会话 | 不可能 | 通过 `CLAUDE_CODE_TASK_LIST_ID` |
 
 ---
 
-## Agent Teams
+## 代理团队
 
-Announced **February 5, 2026** as an experimental feature. Agent Teams allow multiple Claude Code sessions to coordinate on shared work.
+宣布为**2026 年 2 月 5 日**的实验特性。代理团队允许多个 Claude Code 会话协调共享工作。
 
-### Enabling
+### 启用
 
 ```json
-// In ~/.claude/settings.json
+// 在 ~/.claude/settings.json 中
 {
   "env": {
     "CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS": "1"
@@ -207,42 +207,42 @@ Announced **February 5, 2026** as an experimental feature. Agent Teams allow mul
 }
 ```
 
-### Configuration
+### 配置
 
-Team configs live at `~/.claude/teams/{team-name}/` and support modes:
+团队配置在 `~/.claude/teams/{team-name}/` 并支持模式：
 
-| Mode | Description | Requirements |
+| 模式 | 描述 | 要求 |
 |------|-------------|--------------|
-| **In-process** (default) | All teammates run inside your terminal | None |
-| **Split panes** | Each teammate gets its own pane | tmux or iTerm2 (not VS Code terminal) |
+| **进程内**（默认） | 所有队友在你的终端内运行 | 无 |
+| **分割窗格** | 每个队友获得自己的窗格 | tmux 或 iTerm2（不是 VS Code 终端） |
 
 ---
 
-## Design Principles
+## 设计原则
 
-The global-only vs dual-scope split follows a clear pattern:
+全局特性对比双范围分割遵循清晰模式：
 
-| Category | Scope | Rationale |
+| 类别 | 范围 | 原因 |
 |----------|-------|-----------|
-| **Coordination state** (tasks, teams) | Global-only | Needs to persist beyond any single project |
-| **Security state** (credentials, OAuth) | Global-only | Prevents accidental commits to version control |
-| **Personal learning** (auto-memory) | Global-only | User-specific, not team-shareable |
-| **Input preferences** (keybindings) | Global-only | User muscle memory, not project-specific |
-| **Configuration** (settings, rules, agents) | Both levels | Teams need to share project-specific behavior |
-| **Workflow definitions** (commands, skills) | Both levels | Can be personal or team-shared |
+| **协调状态**（任务、团队） | 仅全局 | 需要持久超越任何单项目 |
+| **安全状态**（凭证、OAuth） | 仅全局 | 防止意外提交版本控制 |
+| **个人学习**（自动内存） | 仅全局 | 用户特定，不团队可共享 |
+| **输入偏好**（键绑定） | 仅全局 | 用户肌肉记忆，不项目特定 |
+| **配置**（设置、规则、代理） | 两个级别 | 团队需要共享项目特定行为 |
+| **工作流定义**（命令、技能） | 两个级别 | 可以是个人或团队共享 |
 
-Auto-memory (`~/.claude/projects/<hash>/memory/`) is a notable hybrid: it's *about* a specific project but stored *globally* because it represents personal learning rather than team-shareable configuration.
+自动内存（`~/.claude/projects/<hash>/memory/`）是一个值得注意的混合：它是*关于*特定项目但存储*全局*，因为它表示个人学习而非团队可共享配置。
 
 ---
 
-## Sources
+## 来源
 
-- [Claude Code Settings Documentation](https://code.claude.com/docs/en/settings)
-- [Orchestrate Teams of Claude Code Sessions](https://code.claude.com/docs/en/agent-teams)
-- [What are Tasks in Claude Code - ClaudeLog](https://claudelog.com/faqs/what-are-tasks-in-claude-code/)
-- [Claude Code Task Management - ClaudeFast](https://claudefa.st/blog/guide/development/task-management)
-- [Claude Code Tasks Update - VentureBeat](https://venturebeat.com/orchestration/claude-codes-tasks-update-lets-agents-work-longer-and-coordinate-across)
-- [Where Are Claude Code Global Settings - ClaudeLog](https://claudelog.com/faqs/where-are-claude-code-global-settings/)
-- [Claude Opus 4.6 Agent Teams - VentureBeat](https://venturebeat.com/technology/anthropics-claude-opus-4-6-brings-1m-token-context-and-agent-teams-to-take)
-- [How to Set Up Claude Code Agent Teams (Full Walkthrough) - r/ClaudeCode](https://www.reddit.com/r/ClaudeCode/comments/1qz8tyy/how_to_set_up_claude_code_agent_teams_full/)
-- [Anthropic replaced Claude Code's old 'Todos' with Tasks - r/ClaudeAI](https://www.reddit.com/r/ClaudeAI/comments/1qkjznp/anthropic_replaced_claude_codes_old_todos_with/)
+- [Claude Code 设置文档](https://code.claude.com/docs/en/settings)
+- [编排 Claude Code 会话团队](https://code.claude.com/docs/en/agent-teams)
+- [Claude Code 中的任务是什么 - ClaudeLog](https://claudelog.com/faqs/what-are-tasks-in-claude-code/)
+- [Claude Code 任务管理 - ClaudeFast](https://claudefa.st/blog/guide/development/task-management)
+- [Claude Code 任务更新 - VentureBeat](https://venturebeat.com/orchestration/claude-codes-tasks-update-lets-agents-work-longer-and-coordinate-across)
+- [Claude Code 全局设置在哪里 - ClaudeLog](https://claudelog.com/faqs/where-are-claude-code-global-settings/)
+- [Claude Opus 4.6 代理团队 - VentureBeat](https://venturebeat.com/technology/anthropics-claude-opus-4-6-brings-1m-token-context-and-agent-teams-to-take)
+- [如何设置 Claude Code 代理团队（完整演练）- r/ClaudeCode](https://www.reddit.com/r/ClaudeCode/comments/1qz8tyy/how_to_set_up_claude_code_agent_teams_full/)
+- [Anthropic 用任务替代 Claude Code 旧"代办"- r/ClaudeAI](https://www.reddit.com/r/ClaudeAI/comments/1qkjznp/anthropic_replaced_claude_codes_old_todos_with/)

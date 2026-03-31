@@ -1,46 +1,46 @@
 ---
-description: Fetch weather data for Dubai and create an SVG weather card
+description: 获取迪拜的天气数据并创建SVG天气卡
 model: haiku
 ---
 
-# Weather Orchestrator Command
+# 天气编排命令
 
-Fetch the current temperature for Dubai, UAE and create a visual SVG weather card.
+获取迪拜阿联酋的当前温度并创建视觉SVG天气卡。
 
-## Workflow
+## 工作流
 
-### Step 1: Ask User Preference
+### 第1步：询问用户偏好
 
-Use the AskUserQuestion tool to ask the user whether they want the temperature in Celsius or Fahrenheit.
+使用AskUserQuestion工具询问用户是否想要摄氏度或华氏度的温度。
 
-### Step 2: Fetch Weather Data
+### 第2步：获取天气数据
 
-Use the Task tool to invoke the weather agent:
+使用Task工具调用天气代理：
 - subagent_type: weather-agent
-- description: Fetch Dubai weather data
-- prompt: Fetch the current temperature for Dubai, UAE in [unit requested by user]. Return the numeric temperature value and unit. The agent has a preloaded skill (weather-fetcher) that provides the detailed instructions.
+- description: 获取迪拜天气数据
+- prompt: 获取迪拜阿联酋的当前温度 [用户请求的单位]。返回数值温度值和单位。该代理有一个预加载的技能 (weather-fetcher) 提供详细说明。
 - model: haiku
 
-Wait for the agent to complete and capture the returned temperature value and unit.
+等待代理完成并捕获返回的温度值和单位。
 
-### Step 3: Create SVG Weather Card
+### 第3步：创建SVG天气卡
 
-Use the Skill tool to invoke the weather-svg-creator skill:
+使用Skill工具调用weather-svg-creator技能：
 - skill: weather-svg-creator
 
-The skill will use the temperature value and unit from Step 2 (available in the current context) to create the SVG card and write output files.
+技能将使用第2步的温度值和单位 (在当前上下文中可用) 创建SVG卡并写入输出文件。
 
-## Critical Requirements
+## 关键需求
 
-1. **Use Task Tool for Agent**: DO NOT use bash commands to invoke agents. You must use the Task tool.
-2. **Use Skill Tool for SVG Creator**: Invoke the SVG creator via the Skill tool, not the Task tool.
-3. **Pass User Preference**: Include the user's temperature unit preference when invoking the agent.
-4. **Sequential Flow**: Complete each step before moving to the next.
+1. **使用Task工具用于代理**: 不使用bash命令调用代理。您必须使用Task工具。
+2. **使用Skill工具用于SVG创建器**: 通过Skill工具调用SVG创建器，不是Task工具。
+3. **传递用户偏好**: 在调用代理时包括用户的温度单位偏好。
+4. **顺序流**: 在移动到下一个之前完成每个步骤。
 
-## Output Summary
+## 输出摘要
 
-Provide a clear summary to the user showing:
-- Temperature unit requested
-- Temperature fetched from Dubai
-- SVG card created at `orchestration-workflow/weather.svg`
-- Summary written to `orchestration-workflow/output.md`
+为用户提供清晰的摘要显示：
+- 请求的温度单位
+- 从迪拜获取的温度
+- 在 `orchestration-workflow/weather.svg` 创建的SVG卡
+- 摘要写入 `orchestration-workflow/output.md`

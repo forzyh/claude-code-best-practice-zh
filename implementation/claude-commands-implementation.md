@@ -1,10 +1,10 @@
-# Commands Implementation
+# 命令实现
 
 ![Last Updated](https://img.shields.io/badge/Last_Updated-Mar_02%2C_2026-white?style=flat&labelColor=555)
 
 <table width="100%">
 <tr>
-<td><a href="../">← Back to Claude Code Best Practice</a></td>
+<td><a href="../">← 返回 Claude Code 最佳实践</a></td>
 <td align="right"><img src="../!/claude-jumping.svg" alt="Claude" width="60" /></td>
 </tr>
 </table>
@@ -13,47 +13,47 @@
 
 <a href="#weather-orchestrator"><img src="../!/tags/implemented-hd.svg" alt="Implemented"></a>
 
-The weather orchestrator command is implemented in this repo as the entry point of the **Command → Agent → Skill** architecture pattern, demonstrating how commands orchestrate multi-step workflows.
+天气编排命令在此仓库中实现，作为**命令 → 代理 → 技能**架构模式的入口点，演示命令如何编排多步工作流。
 
 ---
 
-## Weather Orchestrator
+## 天气编排器
 
-**File**: [`.claude/commands/weather-orchestrator.md`](../.claude/commands/weather-orchestrator.md)
+**文件**: [`.claude/commands/weather-orchestrator.md`](../.claude/commands/weather-orchestrator.md)
 
 ```yaml
 ---
-description: Fetch weather data for Dubai and create an SVG weather card
+description: 获取迪拜的天气数据并创建 SVG 天气卡
 model: haiku
 ---
 
-# Weather Orchestrator Command
+# 天气编排器命令
 
-Fetch the current temperature for Dubai, UAE and create a visual SVG weather card.
+获取阿联酋迪拜的当前温度，并创建视觉 SVG 天气卡。
 
-## Workflow
+## 工作流
 
-### Step 1: Ask User Preference
-Use the AskUserQuestion tool to ask the user whether they want the temperature
-in Celsius or Fahrenheit.
+### 步骤 1: 询问用户偏好
+使用 AskUserQuestion 工具询问用户是否希望
+以摄氏度或华氏度显示温度。
 
-### Step 2: Fetch Weather Data
-Use the Agent tool to invoke the weather agent:
+### 步骤 2: 获取天气数据
+使用代理工具调用天气代理：
 - subagent_type: weather-agent
-- prompt: Fetch the current temperature for Dubai, UAE in [unit]...
+- prompt: 获取阿联酋迪拜当前温度 [单位]...
 
-### Step 3: Create SVG Weather Card
-Use the Skill tool to invoke the weather-svg-creator skill:
+### 步骤 3: 创建 SVG 天气卡
+使用技能工具调用 weather-svg-creator 技能：
 - skill: weather-svg-creator
 
 ...
 ```
 
-The command orchestrates the entire workflow: it asks the user for their temperature unit preference, invokes the `weather-agent` via the Agent tool, and then invokes the `weather-svg-creator` skill via the Skill tool.
+命令编排整个工作流：要求用户输入温度单位偏好，通过代理工具调用 `weather-agent`，然后通过技能工具调用 `weather-svg-creator` 技能。
 
 ---
 
-## ![How to Use](../!/tags/how-to-use.svg)
+## ![如何使用](../!/tags/how-to-use.svg)
 
 ```bash
 $ claude
@@ -62,22 +62,22 @@ $ claude
 
 ---
 
-## ![How to Implement](../!/tags/how-to-implement.svg)
+## ![如何实现](../!/tags/how-to-implement.svg)
 
-Ask Claude to create one for you — it will generate the markdown file with YAML frontmatter and body in `.claude/commands/<name>.md`
+请求 Claude 为您创建一个——它将在 `.claude/commands/<name>.md` 中生成带有 YAML frontmatter 和正文的 markdown 文件
 
 ---
 
 <a href="https://github.com/shanraisshan/claude-code-best-practice#orchestration-workflow"><img src="../!/tags/orchestration-workflow-hd.svg" alt="Orchestration Workflow"></a>
 
-The weather orchestrator is the **Command** in the Command → Agent → Skill orchestration pattern. It serves as the entry point — handling user interaction (temperature unit preference), delegating data fetching to the `weather-agent`, and invoking the `weather-svg-creator` skill for visual output.
+天气编排器是命令 → 代理 → 技能编排模式中的**命令**。它充当入口点——处理用户交互（温度单位偏好），将数据获取委托给 `weather-agent`，并调用 `weather-svg-creator` 技能进行可视化输出。
 
 <p align="center">
-  <img src="../orchestration-workflow/orchestration-workflow.svg" alt="Command Skill Agent Architecture Flow" width="100%">
+  <img src="../orchestration-workflow/orchestration-workflow.svg" alt="命令技能代理架构流程" width="100%">
 </p>
 
-| Component | Role | This Repo |
+| 组件 | 角色 | 此仓库 |
 |-----------|------|-----------|
-| **Command** | Entry point, user interaction | [`/weather-orchestrator`](../.claude/commands/weather-orchestrator.md) |
-| **Agent** | Fetches data with preloaded skill (agent skill) | [`weather-agent`](../.claude/agents/weather-agent.md) with [`weather-fetcher`](../.claude/skills/weather-fetcher/SKILL.md) |
-| **Skill** | Creates output independently (skill) | [`weather-svg-creator`](../.claude/skills/weather-svg-creator/SKILL.md) |
+| **命令** | 入口点、用户交互 | [`/weather-orchestrator`](../.claude/commands/weather-orchestrator.md) |
+| **代理** | 使用预加载技能获取数据（代理技能） | [`weather-agent`](../.claude/agents/weather-agent.md) 与 [`weather-fetcher`](../.claude/skills/weather-fetcher/SKILL.md) |
+| **技能** | 独立创建输出（技能） | [`weather-svg-creator`](../.claude/skills/weather-svg-creator/SKILL.md) |

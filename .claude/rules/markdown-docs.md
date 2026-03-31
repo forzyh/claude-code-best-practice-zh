@@ -1,22 +1,22 @@
 # Glob: **/*.md
 
-## Documentation Standards
+## 文档标准
 
-- Keep files focused and concise — one topic per file
-- Use relative links between docs (e.g., `../best-practice/claude-memory.md`), not absolute GitHub URLs
-- Include back-navigation link at top of best-practice and report docs (see existing files for pattern)
-- When adding a new concept or report, update the corresponding table in README.md (CONCEPTS or REPORTS)
+- 保持文件专注和简洁 — 每个文件一个主题
+- 在文档之间使用相对链接（例如 `../best-practice/claude-memory.md`），而不是绝对 GitHub URL
+- 在最佳实践和报告文档的顶部包含后向导航链接（见现有文件以了解模式）
+- 添加新概念或报告时，更新 README.md 中的相应表格（CONCEPTS 或 REPORTS）
 
-## Structure Conventions
+## 结构约定
 
-- Best practice docs go in `best-practice/`
-- Implementation docs go in `implementation/`
-- Reports go in `reports/`
-- Tips go in `tips/`
-- Changelog tracking goes in `changelog/<category>/`
+- 最佳实践文档放在 `best-practice/`
+- 实现文档放在 `implementation/`
+- 报告放在 `reports/`
+- 技巧放在 `tips/`
+- 变更日志跟踪放在 `changelog/<category>/`
 
-## Formatting
+## 格式
 
-- Use tables for structured comparisons (see README CONCEPTS table as reference)
-- Use badge images from `!/tags/` for visual consistency when linking best-practice or implementation docs
-- Keep headings hierarchical — don't skip levels (e.g., don't jump from `##` to `####`)
+- 在结构化比较中使用表格（以 README CONCEPTS 表格作为参考）
+- 在链接最佳实践或实现文档时使用 `!/tags/` 中的徽章图像以保持视觉一致性
+- 保持标题的层级关系 — 不要跳过级别（例如，不要从 `##` 直接跳到 `####`）

@@ -1,89 +1,89 @@
-# Skills Report Changelog
+# 技能报告 变更日志
 
-**Status Legend:**
+**状态说明:**
 
-| Status | Meaning |
+| 状态 | 含义 |
 |--------|---------|
-| ✅ `COMPLETE (reason)` | Action was taken and resolved successfully |
-| ❌ `INVALID (reason)` | Finding was incorrect, not applicable, or intentional |
-| ✋ `ON HOLD (reason)` | Action deferred — waiting on external dependency or user decision |
+| ✅ `完成 (原因)` | 操作已成功执行 |
+| ❌ `无效 (原因)` | 发现不正确、不适用或有意为之 |
+| ✋ `待处理 (原因)` | 操作延迟 — 等待外部依赖或用户决定 |
 
 ---
 
 ## [2026-03-13 04:22 PM PKT] Claude Code v2.1.74
 
-| # | Priority | Type | Action | Status |
+| # | 优先级 | 类型 | 操作 | 状态 |
 |---|----------|------|--------|--------|
-| 1 | MED | Extra Bundled Skill | `keybindings-help` is in local report but absent from official docs bundled skills list — investigate whether to remove or keep | ✅ COMPLETE (removed from bundled skills table — it is a local custom skill in this repo, not an official bundled skill; `/keybindings` is a built-in CLI command) |
+| 1 | 中 | 额外的打包技能 | `keybindings-help` 在本地报告中但在官方文档打包技能列表中不存在 — 调查是否要移除或保留 | ✅ 完成 (从打包技能表中移除 — 它是这个仓库中的本地自定义技能，不是官方打包技能；`/keybindings` 是一个内置 CLI 命令) |
 
 ---
 
 ## [2026-03-15 12:49 PM PKT] Claude Code v2.1.76
 
-| # | Priority | Type | Action | Status |
+| # | 优先级 | 类型 | 操作 | 状态 |
 |---|----------|------|--------|--------|
-| 1 | LOW | Field Accuracy | `name` field Required column reads "Recommended" in local report but official docs now list it as "No" (optional) — update to match | ✅ COMPLETE (updated `name` Required from "Recommended" to "No" to match official docs) |
+| 1 | 低 | 字段精确性 | 本地报告中的 `name` 字段必需列读"推荐"但官方文档现在列出为"否" (可选) — 更新以匹配 | ✅ 完成 (将 `name` 必需从"推荐"更新到"否"以匹配官方文档) |
 
 ---
 
 ## [2026-03-17 12:42 PM PKT] Claude Code v2.1.77
 
-No drift detected — frontmatter fields (10) and bundled skills (5) are fully synchronized with official docs.
+未检测到差异 — 前置事项字段 (10) 和打包技能 (5) 完全与官方文档同步。
 
 ---
 
 ## [2026-03-18 11:38 PM PKT] Claude Code v2.1.78
 
-No drift detected — frontmatter fields (10) and bundled skills (5) are fully synchronized with official docs.
+未检测到差异 — 前置事项字段 (10) 和打包技能 (5) 完全与官方文档同步。
 
 ---
 
 ## [2026-03-19 11:54 AM PKT] Claude Code v2.1.79
 
-No drift detected — frontmatter fields (10) and bundled skills (5) are fully synchronized with official docs.
+未检测到差异 — 前置事项字段 (10) 和打包技能 (5) 完全与官方文档同步。
 
 ---
 
 ## [2026-03-20 08:32 AM PKT] Claude Code v2.1.80
 
-No drift detected — frontmatter fields (10) and bundled skills (5) are fully synchronized with official docs.
+未检测到差异 — 前置事项字段 (10) 和打包技能 (5) 完全与官方文档同步。
 
 ---
 
 ## [2026-03-21 09:07 PM PKT] Claude Code v2.1.81
 
-No drift detected — frontmatter fields (11) and bundled skills (5) are fully synchronized with official docs.
+未检测到差异 — 前置事项字段 (11) 和打包技能 (5) 完全与官方文档同步。
 
 ---
 
 ## [2026-03-23 09:48 PM PKT] Claude Code v2.1.81
 
-No drift detected — frontmatter fields (11) and bundled skills (5) are fully synchronized with official docs.
+未检测到差异 — 前置事项字段 (11) 和打包技能 (5) 完全与官方文档同步。
 
 ---
 
 ## [2026-03-25 08:06 PM PKT] Claude Code v2.1.83
 
-No drift detected — frontmatter fields (11) and bundled skills (5) are fully synchronized with official docs.
+未检测到差异 — 前置事项字段 (11) 和打包技能 (5) 完全与官方文档同步。
 
 ---
 
 ## [2026-03-26 12:59 PM PKT] Claude Code v2.1.84
 
-| # | Priority | Type | Action | Status |
+| # | 优先级 | 类型 | 操作 | 状态 |
 |---|----------|------|--------|--------|
-| 1 | HIGH | New Field | Add `shell` field to frontmatter table — accepts `bash` (default) or `powershell`, controls shell for `!command` blocks in skill content | ✅ COMPLETE (added to frontmatter table, count updated 11→12) |
+| 1 | 高 | 新字段 | 添加 `shell` 字段到前置事项表 — 接受 `bash` (默认) 或 `powershell`，控制技能内容中的 `!command` 块的 shell | ✅ 完成 (添加到前置事项表，计数更新 11→12) |
 
 ---
 
 ## [2026-03-27 06:25 PM PKT] Claude Code v2.1.85
 
-| # | Priority | Type | Action | Status |
+| # | 优先级 | 类型 | 操作 | 状态 |
 |---|----------|------|--------|--------|
-| 1 | HIGH | New Field | Add `paths` field to frontmatter table — accepts glob patterns (string or YAML list) that limit when a skill auto-activates | ✅ COMPLETE (added to frontmatter table, count updated 12→13) |
+| 1 | 高 | 新字段 | 添加 `paths` 字段到前置事项表 — 接受 glob 模式 (字符串或 YAML 列表) 限制技能何时自动激活 | ✅ 完成 (添加到前置事项表，计数更新 12→13) |
 
 ---
 
 ## [2026-03-28 05:59 PM PKT] Claude Code v2.1.86
 
-No drift detected — frontmatter fields (13) and bundled skills (5) are fully synchronized with official docs.
+未检测到差异 — 前置事项字段 (13) 和打包技能 (5) 完全与官方文档同步。

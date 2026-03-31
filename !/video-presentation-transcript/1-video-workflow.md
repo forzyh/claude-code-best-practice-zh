@@ -1,100 +1,100 @@
-# Video 1: From Vibe Coding to Agentic Engineering — Workflows with Claude Code
+# 视频1: 从vibe编码到代理工程 — Claude Code工作流
 
-**Total duration: ~5 minutes**
-
----
-
-## INTRO — The Problem (0:00 – 0:45)
-
-- "If you've just started with Claude Code, chances are you're doing vibe coding — typing prompts, getting results, repeating. That works, but you're only using a fraction of what Claude Code can do."
-- "This repo is a curated collection of best practices that takes you from vibe coding to agentic engineering — where Claude doesn't just respond to you, it runs workflows for you."
-- "In this first video, I'm covering the foundation: **Commands, Agents, and Skills** — and how they chain together into repeatable workflows."
+**总时长: ~5分钟**
 
 ---
 
-## PART 1 — The Ad-Hoc Way (0:45 – 2:00)
+## 简介 — 问题（0:00 – 0:45）
 
-**Demo: Vibe coding approach**
-
-- Open a fresh Claude Code terminal
-- Type: *"What is the weather in Dubai? Write it to an output file and create an SVG card for it."*
-- Show the result — it works, but point out:
-  - The SVG design is different every time (random colors, layout, fonts)
-  - You had to sit and watch it work
-  - If you run it again tomorrow, you'll get a completely different looking card
-- **Open a second terminal, run the same prompt again**
-  - Show the SVG side-by-side — they look different
-- "This is the problem with vibe coding. It works once. But it's not repeatable. It's not a workflow you can trust."
+- "如果您刚刚开始使用Claude Code，您很可能在做vibe编码 — 输入提示、获取结果、重复。这有效，但您只使用了Claude Code功能的一小部分。"
+- "这个存储库是一个精心策划的最佳实践集合，将您从vibe编码带到代理工程 — Claude不仅仅响应您，而是为您运行工作流。"
+- "在第一个视频中，我将介绍基础：**命令、代理和技能** — 以及它们如何链接成可重复的工作流。"
 
 ---
 
-## PART 2 — The Workflow Way (2:00 – 3:15)
+## 第1部分 — 临时方式（0:45 – 2:00）
 
-**Demo: `/weather-orchestrator` command**
+**演示: Vibe编码方法**
 
-- "Now let me show you the same task, but as a workflow."
-- Type: `/weather-orchestrator`
-- Walk through what happens on screen:
-  1. It **asks you** Celsius or Fahrenheit (structured user interaction)
-  2. It **spawns a weather-agent** to fetch the temperature (you see the green agent in the terminal)
-  3. It **invokes a skill** to create the SVG card
-  4. Output: `orchestration-workflow/weather.svg` + `orchestration-workflow/output.md`
-- "Run it again — same SVG layout, same file structure, same clean result. Every time."
-- "You can kick this off and walk away. It runs autonomously."
+- 打开一个新的Claude Code终端
+- 输入：*"Dubai的天气如何？将其写入输出文件并为其创建SVG卡片。"*
+- 显示结果 — 它有效，但要指出：
+  - SVG设计每次都不同（随机颜色、布局、字体）
+  - 您必须坐下来看着它工作
+  - 如果明天再运行一次，您会得到完全不同的卡片
+- **打开第二个终端，再次运行相同的提示**
+  - 并排显示SVG — 它们看起来不同
+- "这是vibe编码的问题。它只工作一次。但它不可重复。这不是您可以信任的工作流。"
 
 ---
 
-## PART 3 — How It Works: Command → Agent → Skill (3:15 – 4:30)
+## 第2部分 — 工作流方式（2:00 – 3:15）
 
-**Explain the three building blocks**
+**演示: `/weather-orchestrator`命令**
 
-### Commands (`.claude/commands/`)
+- "现在让我向您展示相同的任务，但作为一个工作流。"
+- 输入：`/weather-orchestrator`
+- 逐步说明屏幕上发生的事情：
+  1. 它**询问您**摄氏度或华氏度（结构化的用户交互）
+  2. 它**生成一个weather-agent**来获取温度（您在终端中看到绿色代理）
+  3. 它**调用一个技能**来创建SVG卡片
+  4. 输出：`orchestration-workflow/weather.svg` + `orchestration-workflow/output.md`
+- "再运行一次 — 相同的SVG布局、相同的文件结构、相同的清洁结果。每次都这样。"
+- "您可以启动它并走开。它自主运行。"
 
-- "A command is the entry point — like a script. It's a markdown file that tells Claude *what steps to follow*."
-- "Our `weather-orchestrator` is the conductor. It asks the user a question, calls an agent, then calls a skill."
-- Commands live in `.claude/commands/` and show up as `/slash-commands`
+---
 
-### Agents (`.claude/agents/`)
+## 第3部分 — 工作原理: 命令 → 代理 → 技能（3:15 – 4:30）
 
-- "An agent is a specialized worker. Our `weather-agent` has one job: fetch the temperature."
-- "It has a **preloaded skill** called `weather-fetcher` — that skill is injected into the agent's context at startup, so it knows exactly which API to call and how to parse the response."
-- Agents have their own tools, models, and permissions. They're isolated workers.
+**解释三个构建块**
 
-### Skills (`.claude/skills/`)
+### 命令（`.claude/commands/`）
 
-- "A skill is a reusable set of instructions. Think of it as a recipe."
-- "We have two skill patterns here:"
-  - **Agent skill** (preloaded): `weather-fetcher` is baked into the agent — it's domain knowledge
-  - **Invoked skill**: `weather-svg-creator` is called independently via the Skill tool — it creates the SVG card
-- Skills can be background knowledge OR standalone actions
+- "命令是入口点 — 像一个脚本。它是一个markdown文件，告诉Claude*要遵循哪些步骤*。"
+- "我们的`weather-orchestrator`是指挥。它询问用户一个问题，调用代理，然后调用技能。"
+- 命令位于`.claude/commands/`中，显示为`/slash-commands`
 
-### Flow Diagram (optionally show on screen)
+### 代理（`.claude/agents/`）
+
+- "代理是一个专门的工作者。我们的`weather-agent`有一个工作：获取温度。"
+- "它有一个**预加载的技能**称为`weather-fetcher` — 该技能在启动时被注入代理的上下文中，因此它确切地知道要调用哪个API以及如何解析响应。"
+- 代理有自己的工具、模型和权限。它们是隔离的工作者。
+
+### 技能（`.claude/skills/`）
+
+- "技能是一组可重用的说明。将其视为一个食谱。"
+- "我们这里有两种技能模式："
+  - **代理技能**（预加载）：`weather-fetcher`被烘焙到代理中 — 它是领域知识
+  - **调用的技能**：`weather-svg-creator`通过技能工具独立调用 — 它创建SVG卡片
+- 技能可以是背景知识或独立操作
+
+### 流程图（可选在屏幕上显示）
 
 ```
-/weather-orchestrator (Command)
-    → AskUser: C° or F°?
-    → weather-agent (Agent + weather-fetcher skill)
-    → weather-svg-creator (Skill)
-    → Output: weather.svg + output.md
+/weather-orchestrator（命令）
+    → 询问用户: 摄氏度或华氏度？
+    → weather-agent（代理 + weather-fetcher技能）
+    → weather-svg-creator（技能）
+    → 输出: weather.svg + output.md
 ```
 
 ---
 
-## PART 4 — Why This Matters / Wrap-up (4:30 – 5:00)
+## 第4部分 — 为什么重要/总结（4:30 – 5:00）
 
-- "The difference between vibe coding and agentic engineering is **structure**."
-  - Vibe coding: you type, you hope, you get something.
-  - Agentic engineering: you define a workflow once, and it runs the same way every time.
-- "Commands, Agents, and Skills are the three building blocks. Once you understand these, you can build any workflow."
-- "This repo has more patterns — hooks, multi-agent teams, CLAUDE.md configuration — we'll cover those in upcoming videos."
-- "Link to the repo is in the description. Star it, clone it, and start building your own workflows."
+- "Vibe编码和代理工程之间的区别是**结构**。"
+  - Vibe编码：您输入、您希望、您获得某些东西。
+  - 代理工程：您定义一次工作流，它每次运行方式相同。
+- "命令、代理和技能是三个构建块。一旦您理解这些，您就可以构建任何工作流。"
+- "这个存储库有更多模式 — 钩子、多代理团队、CLAUDE.md配置 — 我们将在后续视频中介绍这些。"
+- "存储库链接在描述中。给它加星、克隆它，然后开始构建您自己的工作流。"
 
 ---
 
-## Quick Reference
+## 快速参考
 
-| Concept | Location | Purpose |
+| 概念 | 位置 | 目的 |
 |---------|----------|---------|
-| Command | `.claude/commands/` | Entry point, orchestration, `/slash-command` |
-| Agent | `.claude/agents/` | Specialized worker with own tools & model |
-| Skill | `.claude/skills/` | Reusable instructions (preloaded or invoked) |
+| 命令 | `.claude/commands/` | 入口点、编排、`/slash-command` |
+| 代理 | `.claude/agents/` | 具有自己工具和模型的专门工作者 |
+| 技能 | `.claude/skills/` | 可重用说明（预加载或调用） |
